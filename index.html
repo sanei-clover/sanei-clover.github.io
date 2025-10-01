@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="株式会社サンエイクローバーの公式ホームページ">
+    <title>株式会社サンエイクローバー</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Meiryo', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c7744 0%, #3d9c5d 100%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        nav {
+            background-color: #1f5a35;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        nav li {
+            margin: 0 1.5rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+            font-size: 1.05rem;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        section:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #2c7744;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .about-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .about-item h3 {
+            color: #2c7744;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .service-card h3 {
+            color: #2c7744;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .company-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            max-width: 800px;
+            margin: 2rem auto 0;
+        }
+
+        .company-info table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .company-info th,
+        .company-info td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .company-info th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+            width: 30%;
+            color: #2c7744;
+        }
+
+        .contact-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            max-width: 600px;
+            margin: 2rem auto 0;
+            text-align: center;
+        }
+
+        .contact-info p {
+            margin: 1rem 0;
+            font-size: 1.1rem;
+        }
+
+        footer {
+            background-color: #1f5a35;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav li {
+                margin: 0.5rem 0;
+            }
+
+            .company-info th {
+                width: 40%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>株式会社サンエイクローバー</h1>
+            <p class="tagline">信頼と実績のパートナー</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home">ホーム</a></li>
+            <li><a href="#about">会社概要</a></li>
+            <li><a href="#services">事業内容</a></li>
+            <li><a href="#company">企業情報</a></li>
+            <li><a href="#contact">お問い合わせ</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <div class="container">
+            <h2>ようこそ</h2>
+            <div class="about-content">
+                <div class="about-item">
+                    <h3>私たちの理念</h3>
+                    <p>株式会社サンエイクローバーは、お客様との信頼関係を第一に考え、質の高いサービスを提供し続けることを使命としています。</p>
+                </div>
+                <div class="about-item">
+                    <h3>確かな実績</h3>
+                    <p>長年の経験と専門知識を活かし、様々な業界のお客様にご満足いただけるソリューションを提供してまいりました。</p>
+                </div>
+                <div class="about-item">
+                    <h3>未来への挑戦</h3>
+                    <p>常に時代の変化に対応し、新しい技術とサービスを取り入れながら、お客様と共に成長し続けます。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>会社概要</h2>
+            <div class="company-info">
+                <p>株式会社サンエイクローバーは、お客様のニーズに応える総合的なサービスを提供する企業です。豊富な経験と専門知識を持つスタッフが、お客様のビジネスをサポートいたします。</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2>事業内容</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>コンサルティング</h3>
+                    <p>お客様のビジネス課題を分析し、最適なソリューションをご提案いたします。</p>
+                </div>
+                <div class="service-card">
+                    <h3>システム開発</h3>
+                    <p>最新の技術を活用した、効率的なシステムの設計・開発を行います。</p>
+                </div>
+                <div class="service-card">
+                    <h3>サポートサービス</h3>
+                    <p>導入後も継続的なサポートを提供し、お客様のビジネスを支えます。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="company">
+        <div class="container">
+            <h2>企業情報</h2>
+            <div class="company-info">
+                <table>
+                    <tr>
+                        <th>会社名</th>
+                        <td>株式会社サンエイクローバー</td>
+                    </tr>
+                    <tr>
+                        <th>代表者</th>
+                        <td>代表取締役社長</td>
+                    </tr>
+                    <tr>
+                        <th>設立</th>
+                        <td>2025年</td>
+                    </tr>
+                    <tr>
+                        <th>所在地</th>
+                        <td>東京都</td>
+                    </tr>
+                    <tr>
+                        <th>事業内容</th>
+                        <td>コンサルティング、システム開発、サポートサービス</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>お問い合わせ</h2>
+            <div class="contact-info">
+                <p>サービスに関するご質問やご相談は、お気軽にお問い合わせください。</p>
+                <p>📧 メール: info@sanei-clover.com</p>
+                <p>📞 電話: 03-XXXX-XXXX</p>
+                <p>🕐 営業時間: 平日 9:00 - 18:00</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 株式会社サンエイクローバー. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
