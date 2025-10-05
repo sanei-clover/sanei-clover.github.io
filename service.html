@@ -2,387 +2,329 @@
 <html lang="ja">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sanei Clover || Salesforce / 生成AI / 各種連携</title>
-
-  <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
-  <!--- End favicon-->
-
-  <link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet"> <!-- End google font  -->
-
-  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/css/magnific-popup.css">
-  <link rel="stylesheet" href="assets/css/slick.css">
-  <link rel="stylesheet" href="assets/css/animate.css">
-  <link rel="stylesheet" href="assets/css/fontawesome.css">
-  <link rel="stylesheet" href="assets/css/aos.css">
-  <link rel="stylesheet" href="assets/css/remixicon.css">
-
-
-  <!-- Code Editor  -->
-
-  <link rel="stylesheet" href="assets/css/main.css">
-  <link rel="stylesheet" href="assets/css/app.min.css">
-
-  <!-- scripts -->
-  <script src="assets/js/jquery-3.7.1.min.js"></script>
-  <script src="assets/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/aos.js"></script>
-  <script src="assets/js/menu/menu.js"></script>
-  <script src="assets/js/jquery.magnific-popup.min.js"></script>
-  <script src="assets/js/slick.js"></script>
-  <script src="assets/js/top-to-bottom.js"></script>
-  <script src="assets/js/countdown.js"></script>
-  <script src="assets/js/wow.min.js"></script>
-  <script src="assets/js/skill-bar.js"></script>
-  <script src="assets/js/slick-animation.min.js"></script>
-  <script src="assets/js/faq.js"></script>
-  <script src="assets/js/isotope.pkgd.min.js"></script>
-  <script src="assets/js/tabs-slider.js"></script>
-  <script src="assets/js/product-increment.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyArZVfNvjnLNwJZlLJKuOiWHZ6vtQzzb1Y"></script>
-
-  <script src="assets/js/app.js"></script>
-
-<script>
-  $(function(){
-    $("#footer").load("/footer.html");
-  });
-</script>
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanei Clover || Salesforce / 生成AI / 各種連携</title>
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <!--- End favicon-->
+    <link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet"> <!-- End google font  -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/aos.css">
+    <link rel="stylesheet" href="assets/css/remixicon.css">
+    <!-- Code Editor  -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/app.min.css">
+    <!-- scripts -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/aos.js"></script>
+    <script src="assets/js/menu/menu.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/slick.js"></script>
+    <script src="assets/js/top-to-bottom.js"></script>
+    <script src="assets/js/countdown.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/skill-bar.js"></script>
+    <script src="assets/js/slick-animation.min.js"></script>
+    <script src="assets/js/faq.js"></script>
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="assets/js/tabs-slider.js"></script>
+    <script src="assets/js/product-increment.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyArZVfNvjnLNwJZlLJKuOiWHZ6vtQzzb1Y"></script>
+    <script src="assets/js/app.js"></script>
+    <script>
+        $(function() {
+            $("#footer").load("/footer.html");
+        });
+    </script>
 </head>
 
 <body class="light">
-
-  <div class="tekup-preloader-wrap">
-    <div class="tekup-preloader">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </div>
-
-
-  <div class="progress-bar-container">
-    <div class="progress-bar"></div>
-  </div>
-
-  <!-- progress circle -->
-  <div class="paginacontainer">
-    <div class="progress-wrap">
-      <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-      </svg>
-      <div class="top-arrow">
-        <img src="assets/images/rightarrow.svg" alt="">
-      </div>
-    </div>
-  </div>
-  <!-- End All Js -->
-
-
-
-  <header class="site-header tekup-header-section" id="sticky-menu">
-    <!--<div class="tekup-header-top bg-light1">
-      <div class="container-fuild">
-        <div class="tekup-header-info-wrap">
-          <div class="tekup-header-info dark-color">
-            <ul>
-              <li><i class="ri-map-pin-2-fill"></i>〒170-6012  東京都豊島区東池袋3丁目1-1 サンシャイン60 12階</li>
-            </ul>
-          </div>
-          <div class="tekup-header-info dark-color">
-            <ul>
-              <li><a href="tel:123"><i class="ri-phone-fill"></i>03-6876-4989</a></li>
-              <li><a href="mailto:name@email.com"><i class="ri-mail-fill"></i>tnakanishi@sanei-clover.com</a></li>
-            </ul>
-          </div>-->
+    <div class="tekup-preloader-wrap">
+        <div class="tekup-preloader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
-      </div>
     </div>
-    <div class="tekup-header-bottom bg-white">
-      <div class="container-fuild">
-        <nav class="navbar site-navbar">
-          <!-- Brand Logo-->
-          <div class="brand-logo">
-            <a href="index.html">
-              <img src="assets/images/logo/logo-dark.svg" alt="" class="light-version-logo">
-            </a>
-          </div>
-
-          <div class="menu-block-wrapper">
-            <div class="menu-overlay"></div>
-            <nav class="menu-block" id="append-menu-header">
-              <div class="mobile-menu-head">
-                <div class="go-back">
-                  <i class="fa fa-angle-left"></i>
+    <div class="progress-bar-container">
+        <div class="progress-bar"></div>
+    </div>
+    <!-- progress circle -->
+    <div class="paginacontainer">
+        <div class="progress-wrap">
+            <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+            </svg>
+            <div class="top-arrow">
+                <img src="assets/images/rightarrow.svg" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- End All Js -->
+    <header class="site-header tekup-header-section" id="sticky-menu">
+        <div class="tekup-header-bottom bg-white">
+            <div class="container-fuild">
+                <nav class="navbar site-navbar">
+                    <!-- Brand Logo-->
+                    <div class="brand-logo">
+                        <a href="index.html">
+                            <img src="assets/images/logo/logo-dark.svg" alt="" class="light-version-logo">
+                        </a>
+                    </div>
+                    <div class="menu-block-wrapper">
+                        <div class="menu-overlay"></div>
+                        <nav class="menu-block" id="append-menu-header">
+                            <div class="mobile-menu-head">
+                                <div class="go-back">
+                                    <i class="fa fa-angle-left"></i>
+                                </div>
+                                <div class="current-menu-title"></div>
+                                <div class="mobile-menu-close">&times;</div>
+                            </div>
+                            <ul class="site-menu-main">
+                                <li class="nav-item nav-item-has-children">
+                                    <a href="index.html" class="nav-link-item drop-trigger">トップ</i></a>
+                                <li class="nav-item">
+                                    <a href="service.html" class="nav-link-item">サービス紹介</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="about-us.html" class="nav-link-item">会社概要</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="contact-us.html" class="nav-link-item">お問い合わせ</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="recruit.html" class="nav-link-item">採用情報</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="header-btn header-btn-l1 ms-auto d-none d-xs-inline-flex">
+                        <div class="tekup-header-icon">
+                            <div class="tekup-header-search">
+                                <i class="ri-search-line"></i>
+                            </div>
+                            <a class="tekup-default-btn tekup-header-btn" href="contact-us.html">企画のご相談 <i class="ri-arrow-right-up-line"></i></a>
+                        </div>
+                    </div>
+                    <!-- mobile menu trigger -->
+                    <div class="mobile-menu-trigger">
+                        <span></span>
+                    </div>
+                    <!--/.Mobile Menu Hamburger Ends-->
+                </nav>
+            </div>
+        </div>
+        <div class="tekup-header-search-section">
+            <div class="container">
+                <div class="tekup-header-search-box">
+                    <input type="search" placeholder="Search here...">
+                    <button id="header-search" type="button"><img src="assets/images/v1/search-dark.png" alt=""></button>
+                    <p>Type above and press Enter to search. Press Close to cancel.</p>
                 </div>
-                <div class="current-menu-title"></div>
-                <div class="mobile-menu-close">&times;</div>
-              </div>
-              <ul class="site-menu-main">
-                <li class="nav-item nav-item-has-children">
-                  <a href="index.html" class="nav-link-item drop-trigger">トップ</i></a>
-                <li class="nav-item">
-                  <a href="service.html" class="nav-link-item">サービス紹介</a>
-                </li>
-                <li class="nav-item">
-                  <a href="about-us.html" class="nav-link-item">会社概要</a>
-                </li>
-                 <li class="nav-item">
-                  <a href="contact-us.html" class="nav-link-item">お問い合わせ</a>
-                </li>
-                <li class="nav-item">
-                  <a href="recruit.html" class="nav-link-item">採用情報</a>
-                </li>
-                
-              </ul>
+            </div>
+            <div class="tekup-header-search-close">
+                <i class="ri-close-line"></i>
+            </div>
+        </div>
+    </header>
+    <div class="search-overlay"></div>
+    <!--End landex-header-section -->
+    <div class="tekup-breadcrumb" style="background-image: url(assets/images/breadcrumb/breadcrumb.png)">
+        <div class="container">
+            <h1 class="post__title">サービス紹介</h1>
+            <nav class="breadcrumbs">
+                <ul>
+                    <li><a href="index.html">トップ</a></li>
+                    <li aria-current="page"> サービス紹介</li>
+                </ul>
             </nav>
-          </div>
-
-
-          <div class="header-btn header-btn-l1 ms-auto d-none d-xs-inline-flex">
-            <div class="tekup-header-icon">
-              <div class="tekup-header-search">
-                <i class="ri-search-line"></i>
-              </div>
-              <a class="tekup-default-btn tekup-header-btn" href="contact-us.html">企画のご相談  <i class="ri-arrow-right-up-line"></i></a>
-            </div>
-          </div>
-          <!-- mobile menu trigger -->
-          <div class="mobile-menu-trigger">
-            <span></span>
-          </div>
-          <!--/.Mobile Menu Hamburger Ends-->
-        </nav>
-      </div>
+        </div>
     </div>
-
-    <div class="tekup-header-search-section">
-      <div class="container">
-        <div class="tekup-header-search-box">
-          <input type="search" placeholder="Search here...">
-          <button id="header-search" type="button"><img src="assets/images/v1/search-dark.png" alt=""></button>
-          <p>Type above and press Enter to search. Press Close to cancel.</p>
-        </div>
-      </div>
-      <div class="tekup-header-search-close">
-        <i class="ri-close-line"></i>
-      </div>
-    </div>
-  </header>
-  <div class="search-overlay"></div>
-  <!--End landex-header-section -->
-
-
-
-  <div class="tekup-breadcrumb" style="background-image: url(assets/images/breadcrumb/breadcrumb.png)">
-    <div class="container">
-      <h1 class="post__title">サービス紹介</h1>
-      <nav class="breadcrumbs">
-        <ul>
-          <li><a href="index.html">トップ</a></li>
-          <li aria-current="page"> サービス紹介</li>
-        </ul>
-      </nav>
-
-    </div>
-  </div>
-  <!-- End breadcrumb -->
-
-  <div class="section tekup-section-padding4">
-    <div class="container">
-      <div class="row">
-        <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-duration="400">
-          <div class="tekup-iconbox-wrap4">
-            <div class="tekup-iconbox-icon4">
-              <img src="assets/images/iconbox/icon8.png" alt="">
-            </div>
-            <div class="tekup-iconbox-data4">
-              <h4>確かなサポート</h4>
-              <p>お客様のビジネスに深く寄り添い、共に未来を創るパートナーとして、確かな信頼と成果をお届けします。</p>
-              <a class="tekup-iconbox-btn" href="contact-us.html">Learn More <i class="ri-arrow-right-up-line"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-duration="600">
-          <div class="tekup-iconbox-wrap4">
-            <div class="tekup-iconbox-icon4">
-              <img src="assets/images/iconbox/icon9.png" alt="">
-            </div>
-            <div class="tekup-iconbox-data4">
-              <h4>迅速な対応</h4>
-              <p>変化するビジネスニーズに迅速かつ柔軟に対応し、安心と信頼のサポート体制でお客様を力強く支えます。</p>
-              <a class="tekup-iconbox-btn" href="contact-us.html">Learn More <i class="ri-arrow-right-up-line"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-duration="800">
-          <div class="tekup-iconbox-wrap4">
-            <div class="tekup-iconbox-icon4">
-              <img src="assets/images/iconbox/icon10.png" alt="">
-            </div>
-            <div class="tekup-iconbox-data4">
-              <h4>最適なソリューション</h4>
-              <p>お客様に本当に必要なものを追求し、価値に見合った最適なソリューションを提供します。</p>
-              <a class="tekup-iconbox-btn" href="contact-us.html">Learn More <i class="ri-arrow-right-up-line"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- End section -->
-
-  <div class="section bg-light1 tekup-section-padding2">
-    <div class="container">
-      <div class="tekup-section-title center">
-        <h2>私たちのサービス</h2>
-      </div>
-      <div class="row">
-        <div class="col-lg-6" data-aos="fade-up" data-aos-duration="400">
-          <div class="tekup-iconbox-wrap3 bg-white">
-            <div class="tekup-iconbox-icon3">
-              <img src="assets/images/v2/icon3.png" alt="">
-            </div>
-            <div class="tekup-iconbox-data3">
-              <a href="single-service.html">
-                <h5>システム開発</h5>
-              </a>
-              <p>業務プロセスにフィットするシステムをゼロから開発し、日々の業務に確かなしくみをもたらします。</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6" data-aos="fade-up" data-aos-duration="600">
-          <div class="tekup-iconbox-wrap3 bg-white">
-            <div class="tekup-iconbox-icon3">
-              <img src="assets/images/v2/icon4.png" alt="">
-            </div>
-            <div class="tekup-iconbox-data3">
-              <a href="single-service.html">
-                <h5>Salesforce AI</h5>
-              </a>
-              <p>SalesforceとAIを組み合わせたDX支援で、営業・サービスを自動化し、顧客体験を向上させます。</p>
-            </div>
-          </div>
-
-        </div>
-        <div class="col-lg-6" data-aos="fade-up" data-aos-duration="800">
-          <div class="tekup-iconbox-wrap3 bg-white">
-            <div class="tekup-iconbox-icon3">
-              <img src="assets/images/v2/icon7.png" alt="">
-            </div>
-            <div class="tekup-iconbox-data3">
-              <a href="single-service.html">
-                <h5>ITコンサルティング</h5>
-              </a>
-              <p>お客様のIT課題を深く理解し、ビジネスの成長に繋がる最適な戦略を共に描きます。</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6" data-aos="fade-up" data-aos-duration="1000">
-          <div class="tekup-iconbox-wrap3 bg-white">
-            <div class="tekup-iconbox-icon3">
-              <img src="assets/images/v2/icon6.png" alt="">
-            </div>
-            <div class="tekup-iconbox-data3">
-              <a href="single-service.html">
-                <h5>デジタルマーケティング支援</h5>
-              </a>
-              <p>最新のAI技術とデータ分析を活用し、効果的なマーケティング戦略で事業の成果を最大化します。</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- End section -->
-
-  <div class="section tekup-section-padding2">
-    <div class="container">
-      <div class="tekup-section-title center">
-        <h2>私たちの開発プロセス</h2>
-      </div>
-      <div class="tekup-iconbox-line" style="background-image: url(assets/images/v1/line.png)">
-        <div class="row">
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="400">
-            <div class="tekup-iconbox-wrap2">
-              <div class="tekup-iconbox-icon2">
-                <img src="assets/images/iconbox/icon5.png" alt="">
-                <div class="tekup-iconbox-count">
-                  01
+    <!-- End breadcrumb -->
+    <div class="section tekup-section-padding4">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-duration="400">
+                    <div class="tekup-iconbox-wrap4">
+                        <div class="tekup-iconbox-icon4">
+                            <img src="assets/images/iconbox/icon8.png" alt="">
+                        </div>
+                        <div class="tekup-iconbox-data4">
+                            <h4>確かなサポート</h4>
+                            <p>お客様のビジネスに深く寄り添い、共に未来を創るパートナーとして、確かな信頼と成果をお届けします。</p>
+                            <a class="tekup-iconbox-btn" href="contact-us.html">Learn More <i class="ri-arrow-right-up-line"></i></a>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="tekup-iconbox-data2">
-                <a href="service.html">
-                  <h5>構想策定・計画</h5>
-                </a>
-                <p>お客様の課題に深く向き合い、本当に必要なシステムを共に探求。未来を見据えた最適な計画を立案します。</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="600">
-            <div class="tekup-iconbox-wrap2">
-              <div class="tekup-iconbox-icon2">
-                <img src="assets/images/iconbox/icon6.png" alt="">
-                <div class="tekup-iconbox-count">
-                  02
+                <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-duration="600">
+                    <div class="tekup-iconbox-wrap4">
+                        <div class="tekup-iconbox-icon4">
+                            <img src="assets/images/iconbox/icon9.png" alt="">
+                        </div>
+                        <div class="tekup-iconbox-data4">
+                            <h4>迅速な対応</h4>
+                            <p>変化するビジネスニーズに迅速かつ柔軟に対応し、安心と信頼のサポート体制でお客様を力強く支えます。</p>
+                            <a class="tekup-iconbox-btn" href="contact-us.html">Learn More <i class="ri-arrow-right-up-line"></i></a>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="tekup-iconbox-data2">
-                <a href="service.html">
-                  <h5>設計・開発</h5>
-                </a>
-                <p>確かな技術力で「本当に使われる」システムを形にします。使いやすさやビジネスへの貢献を意識した開発を行います。</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3" data-aos="fade-up" data-aos-duration="800">
-            <div class="tekup-iconbox-wrap2">
-              <div class="tekup-iconbox-icon2">
-                <img src="assets/images/iconbox/icon7.png" alt="">
-                <div class="tekup-iconbox-count">
-                  03
+                <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-duration="800">
+                    <div class="tekup-iconbox-wrap4">
+                        <div class="tekup-iconbox-icon4">
+                            <img src="assets/images/iconbox/icon10.png" alt="">
+                        </div>
+                        <div class="tekup-iconbox-data4">
+                            <h4>最適なソリューション</h4>
+                            <p>お客様に本当に必要なものを追求し、価値に見合った最適なソリューションを提供します。</p>
+                            <a class="tekup-iconbox-btn" href="contact-us.html">Learn More <i class="ri-arrow-right-up-line"></i></a>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="tekup-iconbox-data2">
-                <a href="service.html">
-                  <h5>テスト・運用・改善e</h5>
-                </a>
-                <p>導入後も一貫してサポート。変化に対応し、システムを”業務の土台”として共に育てていきます。</p>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
-
     </div>
-  </div>
-  <!-- end section -->
-
-  <div class="section bg-cover" style="background-image: url(assets/images/v1/cta-bg.png)">
-    <div class="container">
-      <div class="tekup-cta-wrap">
-        <div class="tekup-cta-content center">
-          <h2>共に、未来を<br>創りませんか。</h2>
-          <p>私たちは、イノベーションの設計者であり、進歩の開拓者であり、そして、あなたの成功を支えるパートナーです。人とテクノロジーが調和したときにこそ、真の変革は生まれると信じています。</p>
-          <div class="tekup-extra-mt" data-aos="fade-up" data-aos-duration="600">
-            <a class="tekup-default-btn tekup-white-btn" href="contact-us.html">企画のご相談 <i class="ri-arrow-right-up-line"></i></a>
-          </div>
+    <!-- End section -->
+    <div class="section bg-light1 tekup-section-padding2">
+        <div class="container">
+            <div class="tekup-section-title center">
+                <h2>私たちのサービス</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-6" data-aos="fade-up" data-aos-duration="400">
+                    <div class="tekup-iconbox-wrap3 bg-white">
+                        <div class="tekup-iconbox-icon3">
+                            <img src="assets/images/v2/icon3.png" alt="">
+                        </div>
+                        <div class="tekup-iconbox-data3">
+                            <a href="single-service.html">
+                                <h5>システム開発</h5>
+                            </a>
+                            <p>業務プロセスにフィットするシステムをゼロから開発し、日々の業務に確かなしくみをもたらします。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-up" data-aos-duration="600">
+                    <div class="tekup-iconbox-wrap3 bg-white">
+                        <div class="tekup-iconbox-icon3">
+                            <img src="assets/images/v2/icon4.png" alt="">
+                        </div>
+                        <div class="tekup-iconbox-data3">
+                            <a href="single-service.html">
+                                <h5>Salesforce AI</h5>
+                            </a>
+                            <p>SalesforceとAIを組み合わせたDX支援で、営業・サービスを自動化し、顧客体験を向上させます。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-up" data-aos-duration="800">
+                    <div class="tekup-iconbox-wrap3 bg-white">
+                        <div class="tekup-iconbox-icon3">
+                            <img src="assets/images/v2/icon7.png" alt="">
+                        </div>
+                        <div class="tekup-iconbox-data3">
+                            <a href="single-service.html">
+                                <h5>ITコンサルティング</h5>
+                            </a>
+                            <p>お客様のIT課題を深く理解し、ビジネスの成長に繋がる最適な戦略を共に描きます。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="tekup-iconbox-wrap3 bg-white">
+                        <div class="tekup-iconbox-icon3">
+                            <img src="assets/images/v2/icon6.png" alt="">
+                        </div>
+                        <div class="tekup-iconbox-data3">
+                            <a href="single-service.html">
+                                <h5>デジタルマーケティング支援</h5>
+                            </a>
+                            <p>最新のAI技術とデータ分析を活用し、効果的なマーケティング戦略で事業の成果を最大化します。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
-  <!-- End section -->
-
-
-
-  <!-- Footer  -->
-  <div id="footer"></div>
-
+    <!-- End section -->
+    <div class="section tekup-section-padding2">
+        <div class="container">
+            <div class="tekup-section-title center">
+                <h2>私たちの開発プロセス</h2>
+            </div>
+            <div class="tekup-iconbox-line" style="background-image: url(assets/images/v1/line.png)">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="400">
+                        <div class="tekup-iconbox-wrap2">
+                            <div class="tekup-iconbox-icon2">
+                                <img src="assets/images/iconbox/icon5.png" alt="">
+                                <div class="tekup-iconbox-count"> 01 </div>
+                            </div>
+                            <div class="tekup-iconbox-data2">
+                                <a href="service.html">
+                                    <h5>構想策定・計画</h5>
+                                </a>
+                                <p>お客様の課題に深く向き合い、本当に必要なシステムを共に探求。未来を見据えた最適な計画を立案します。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="600">
+                        <div class="tekup-iconbox-wrap2">
+                            <div class="tekup-iconbox-icon2">
+                                <img src="assets/images/iconbox/icon6.png" alt="">
+                                <div class="tekup-iconbox-count"> 02 </div>
+                            </div>
+                            <div class="tekup-iconbox-data2">
+                                <a href="service.html">
+                                    <h5>設計・開発</h5>
+                                </a>
+                                <p>確かな技術力で「本当に使われる」システムを形にします。使いやすさやビジネスへの貢献を意識した開発を行います。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3" data-aos="fade-up" data-aos-duration="800">
+                        <div class="tekup-iconbox-wrap2">
+                            <div class="tekup-iconbox-icon2">
+                                <img src="assets/images/iconbox/icon7.png" alt="">
+                                <div class="tekup-iconbox-count"> 03 </div>
+                            </div>
+                            <div class="tekup-iconbox-data2">
+                                <a href="service.html">
+                                    <h5>テスト・運用・改善e</h5>
+                                </a>
+                                <p>導入後も一貫してサポート。変化に対応し、システムを”業務の土台”として共に育てていきます。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end section -->
+    <div class="section bg-cover" style="background-image: url(assets/images/v1/cta-bg.png)">
+        <div class="container">
+            <div class="tekup-cta-wrap">
+                <div class="tekup-cta-content center">
+                    <h2>共に、未来を<br>創りませんか。</h2>
+                    <p>私たちは、イノベーションの設計者であり、進歩の開拓者であり、そして、あなたの成功を支えるパートナーです。人とテクノロジーが調和したときにこそ、真の変革は生まれると信じています。</p>
+                    <div class="tekup-extra-mt" data-aos="fade-up" data-aos-duration="600">
+                        <a class="tekup-default-btn tekup-white-btn" href="contact-us.html">企画のご相談 <i class="ri-arrow-right-up-line"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End section -->
+    <!-- Footer  -->
+    <div id="footer"></div>
 </body>
+
 </html>
