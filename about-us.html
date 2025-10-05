@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sanei Clover || Salesforce / 生成AI / 各種連携</title>
+
+  <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+  <!--- End favicon-->
+
+  <link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet"> <!-- End google font  -->
+
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/magnific-popup.css">
+  <link rel="stylesheet" href="assets/css/slick.css">
+  <link rel="stylesheet" href="assets/css/animate.css">
+  <link rel="stylesheet" href="assets/css/fontawesome.css">
+  <link rel="stylesheet" href="assets/css/aos.css">
+  <link rel="stylesheet" href="assets/css/remixicon.css">
+
+
+  <!-- Code Editor  -->
+
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/app.min.css">
+  <style>
+/* --- General Layout & Spacing --- */
+
+.tekup-section-padding {
+    padding: 60px 0;
+}
+
+.tekup-default-content {
+    /* Ensures content within this div is well-aligned */
+    padding-right: 20px;
+}
+
+/* --- Responsive Map Container --- */
+
+.map-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 75%; /* Adjusted for a more compact, square look */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  margin-top: 40px;
+}
+
+.map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* --- Contact Info & Grid Layout --- */
+
+.tekup-contact-info-wrap {
+    /* Using Flexbox to create a responsive, two-column layout */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.tekup-contact-info {
+    /* Styles for each individual info block (address & contact) */
+    flex: 1 1 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.tekup-contact-info i {
+    font-size: 2rem;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.tekup-contact-info h5 {
+    margin: 0 0 5px 0;
+    font-size: 1.2rem;
+}
+
+.tekup-contact-info p,
+.tekup-contact-info a {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+    text-decoration: none;
+}
+
+.tekup-contact-info a:hover {
+    color: #007bff;
+}
+
+/* --- Contact Form Styling --- */
+
+.tekup-main-form {
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.tekup-main-field {
+    margin-bottom: 15px;
+}
+
+.tekup-main-field input,
+.tekup-main-field textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.tekup-main-field textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+#tekup-main-form-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#tekup-main-form-btn:hover {
+    background-color: #0056b3;
+}
+
+/* --- Responsive & Mobile Adjustments --- */
+
+@media (max-width: 991px) {
+    .tekup-contact-info-wrap {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+  h1.post__title {
+    font-size: 2.2rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  .breadcrumbs {
+    font-size: 0.9rem;
+  }
+
+  .tekup-contact-info p,
+  .tekup-contact-info a {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .tekup-section-padding {
+    padding: 30px 15px;
+  }
+}
+  </style>
+
+  <style>
+.company-overview {
+  max-width: 1000px;
+  margin: 40px auto;
+  font-family: "Hiragino Sans", "Helvetica Neue", Arial, sans-serif;
+  padding: 0 15px;
+  font-size: 16px; /* default desktop font */
+  line-height: 1.6;
+}
+
+.company-overview h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.company-overview table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  min-width: 600px;
+}
+
+.company-overview th, 
+.company-overview td {
+  border: 1px solid #ddd;
+  padding: 12px 16px;
+  text-align: left;
+  vertical-align: top;
+  font-size: 15px;
+}
+
+.company-overview th {
+  background: #f7f7f7;
+  width: 30%;
+  font-weight: bold;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .company-overview {
+    font-size: 14px; /* shrink text */
+  }
+
+  .company-overview h2 {
+    font-size: 18px;
+  }
+
+  .company-overview table,
+  .company-overview tbody,
+  .company-overview tr,
+  .company-overview td,
+  .company-overview th {
+    display: block;
+    width: 100%;
+  }
+
+  .company-overview th {
+    background: none;
+    font-weight: bold;
+    padding: 8px 0 0;
+    font-size: 14px;
+  }
+
+  .company-overview td {
+    padding: 4px 0 12px;
+    border: none;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    word-break: break-word; /* wrap long text */
+  }
+}
+
+
+  </style>
+</head>
+
+<body class="light">
+
+  <div class="tekup-preloader-wrap">
+    <div class="tekup-preloader">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
+
+  <div class="progress-bar-container">
+    <div class="progress-bar"></div>
+  </div>
+
+  <!-- progress circle -->
+  <div class="paginacontainer">
+    <div class="progress-wrap">
+      <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+      </svg>
+      <div class="top-arrow">
+        <img src="assets/images/rightarrow.svg" alt="">
+      </div>
+    </div>
+  </div>
+  <!-- End All Js -->
+
+
+
+<header class="site-header tekup-header-section" id="sticky-menu">
+    <!--<div class="tekup-header-top bg-light1">
+      <div class="container-fuild">
+        <div class="tekup-header-info-wrap">
+          <div class="tekup-header-info dark-color">
+            <ul>
+              <li><i class="ri-map-pin-2-fill"></i>〒170-6012  東京都豊島区東池袋3丁目1-1 サンシャイン60 12階</li>
+            </ul>
+          </div>
+          <div class="tekup-header-info dark-color">
+            <ul>
+              <li><a href="tel:123"><i class="ri-phone-fill"></i>03-6876-4989</a></li>
+              <li><a href="mailto:name@email.com"><i class="ri-mail-fill"></i>tnakanishi@sanei-clover.com</a></li>
+            </ul>
+          </div>-->
+        </div>
+      </div>
+    </div>
+    <div class="tekup-header-bottom bg-white">
+      <div class="container-fuild">
+        <nav class="navbar site-navbar">
+          <!-- Brand Logo-->
+          <div class="brand-logo">
+            <a href="index.html">
+              <img src="assets/images/logo/logo-dark.svg" alt="" class="light-version-logo">
+            </a>
+          </div>
+
+          <div class="menu-block-wrapper">
+            <div class="menu-overlay"></div>
+            <nav class="menu-block" id="append-menu-header">
+              <div class="mobile-menu-head">
+                <div class="go-back">
+                  <i class="fa fa-angle-left"></i>
+                </div>
+                <div class="current-menu-title"></div>
+                <div class="mobile-menu-close">&times;</div>
+              </div>
+              <ul class="site-menu-main">
+                <li class="nav-item nav-item-has-children">
+                  <a href="index.html" class="nav-link-item drop-trigger">トップ</i></a>
+                <li class="nav-item">
+                  <a href="service.html" class="nav-link-item">サービス紹介</a>
+                </li>
+                <li class="nav-item">
+                  <a href="about-us.html" class="nav-link-item">会社概要</a>
+                </li>
+                 <li class="nav-item">
+                  <a href="contact-us.html" class="nav-link-item">お問い合わせ</a>
+                </li>
+                <li class="nav-item">
+                  <a href="recruit.html" class="nav-link-item">採用情報</a>
+                </li>
+                
+              </ul>
+            </nav>
+          </div>
+
+
+          <div class="header-btn header-btn-l1 ms-auto d-none d-xs-inline-flex">
+            <div class="tekup-header-icon">
+              <div class="tekup-header-search">
+                <i class="ri-search-line"></i>
+              </div>
+              <a class="tekup-default-btn tekup-header-btn" href="contact-us.html">企画のご相談 <i class="ri-arrow-right-up-line"></i></a>
+            </div>
+          </div>
+          <!-- mobile menu trigger -->
+          <div class="mobile-menu-trigger">
+            <span></span>
+          </div>
+          <!--/.Mobile Menu Hamburger Ends-->
+        </nav>
+      </div>
+    </div>
+
+    <div class="tekup-header-search-section">
+      <div class="container">
+        <div class="tekup-header-search-box">
+          <input type="search" placeholder="Search here...">
+          <button id="header-search" type="button"><img src="assets/images/v1/search-dark.png" alt=""></button>
+          <p>Type above and press Enter to search. Press Close to cancel.</p>
+        </div>
+      </div>
+      <div class="tekup-header-search-close">
+        <i class="ri-close-line"></i>
+      </div>
+    </div>
+  </header>
+  <div class="search-overlay"></div>
+  <!--End landex-header-section -->
+
+
+
+  <div class="tekup-breadcrumb" style="background-image: url(assets/images/breadcrumb/breadcrumb.png)">
+    <div class="container">
+      <h1 class="post__title">会社概要</h1>
+      <nav class="breadcrumbs">
+        <ul>
+          <li><a href="index.html">トップ</a></li>
+          <li aria-current="page"> 会社概要</li>
+        </ul>
+      </nav>
+
+    </div>
+  </div>
+  <!-- End breadcrumb -->
+
+  <div class="section tekup-section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-6 col-lg-6" data-aos="fade-up" data-aos-duration="600">
+          <div class="tekup-thumb">
+            <img src="assets/images/v1/thumb1.png" alt="">
+            <div class="tekup-thumb-card">
+              <!--<img src="assets/images/v3/Satisfaction.png" alt="">-->
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-5 offset-xl-1 col-lg-6 d-flex align-items-center">
+          <div class="tekup-default-content">
+            <h4>私たちが目指すのは、テクノロジーでつなぐ「人と、未来と、しあわせ」です。</h4>
+            <br>
+         <p>テクノロジーで、人と未来をしあわせに。</p>
+<p>私たちは「三方よし」の精神で、技術とまごころを尽くし、価値ある変革を創造します。</p>
+<p>単なるシステム開発ではなく、お客様との信頼を築き、「頼られる」存在になること。それが私たちの使命です。</p>
+            <div class="tekup-icon-list">
+              <ul>
+                <li><i class="ri-check-line"></i>信頼第一：お客様の課題に真摯に向き合います。</li>
+                <li><i class="ri-check-line"></i>共創の精神：共に考え、共に未来を創ります。</li>
+                <li><i class="ri-check-line"></i>丁寧な仕事：一つひとつの業務に心を込めます。</li>
+              </ul>
+            </div>
+            <div class="tekup-extra-mt">
+              <a class="tekup-default-btn" href="about-us.html">私たちについて <i class="ri-arrow-right-up-line"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End section -->
+
+  <div class="section bg-light1 tekup-section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 order-lg-2" data-aos="fade-up" data-aos-duration="600">
+          <div class="tekup-thumb ml-30">
+            <img src="assets/images/v3/thumb2.png" alt="">
+            <div class="tekup-thumb-card right">
+              <!--<img src="assets/images/v3/project-done.png" alt="">-->
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 d-flex align-items-center">
+          <div class="tekup-default-content mr-60">
+            <h2>テクノロジーで、ビジネスの成功を加速させる</h2>
+            <p>私たちサンエイクローバーは、テクノロジーで「人・未来・しあわせ」をつなぐことを使命としています。「三方よし」の精神を胸に、システムではなく信頼と未来を共に築きます。</p>
+            <div class="tekup-extra-mt">
+              <div class="skillbar" data-percent="96">
+                <p class="skillbar-lable">
+                  <span class="skill-bar-title">AI・クラウドを利用したDX支援</span>
+                  <span class="skill-bar-percent"></span>
+                </p>
+                <div class="skillbar-box">
+                  <p class="skillbar-bar"></p>
+                </div>
+              </div>
+              <div class="skillbar" data-percent="89">
+                <p class="skillbar-lable">
+                  <span class="skill-bar-title">システムエンジニアリングサービス</span>
+                  <span class="skill-bar-percent"></span>
+                </p>
+                <div class="skillbar-box">
+                  <p class="skillbar-bar"></p>
+                </div>
+              </div>
+              <div class="skillbar" data-percent="95">
+                <p class="skillbar-lable">
+                  <span class="skill-bar-title">業務システム開発・運用支援</span>
+                  <span class="skill-bar-percent"></span>
+                </p>
+                <div class="skillbar-box">
+                  <p class="skillbar-bar"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End section -->
+
+  <div class="section bg-accent tekup-section-padding3">
+    <div id="tekup-counter"></div>
+    <div class="container">
+      <div class="tekup-counter-wrap4">
+        <div class="tekup-counter-data4">
+          <h2><span data-percentage="26" class="tekup-counter"></span>+</h2>
+          <p>経験年数</p>
+        </div>
+        <div class="tekup-counter-data4">
+          <h2><span data-percentage="730" class="tekup-counter"></span>+</h2>
+          <p>成功実績</p>
+        </div>
+        <div class="tekup-counter-data4">
+          <h2><span data-percentage="198" class="tekup-counter"></span>+</h2>
+          <p>顧客満足度</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End section -->
+
+  <!--<div class="section bg-light1 tekup-section-padding2">
+    <div class="container">
+      <div class="tekup-section-title center">
+        <h2>チームメンバー</h2>
+      </div>
+      <div class="row">
+        <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-duration="400">
+          <div class="tekup-team-wrap">
+            <div class="tekup-team-thumb">
+              <img src="assets/images/team/team1.png" alt="">
+              <div class="tekup-social-icon-box style-four position">
+                <ul>
+                  <li>
+                    <a href="https://www.linkedin.com/">
+                      <i class="ri-linkedin-fill"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://twitter.com/">
+                      <i class="ri-twitter-fill"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.instagram.com/">
+                      <i class="ri-instagram-fill"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="tekup-team-data">
+              <a href="#">
+                <h5>中西 拓也</h5>
+              </a>
+              <p>CEO 兼 Founder</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-duration="600">
+          <div class="tekup-team-wrap">
+            <div class="tekup-team-thumb">
+              <img src="assets/images/team/team2.png" alt="">
+              <div class="tekup-social-icon-box style-four position">
+                <ul>
+                  <li>
+                    <a href="https://www.linkedin.com/">
+                      <i class="ri-linkedin-fill"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://twitter.com/">
+                      <i class="ri-twitter-fill"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.instagram.com/">
+                      <i class="ri-instagram-fill"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="tekup-team-data">
+              <a href="#">
+                <h5>小林 愛</h5>
+              </a>
+              <p>CTO</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-duration="800">
+          <div class="tekup-team-wrap">
+            <div class="tekup-team-thumb">
+              <img src="assets/images/team/team3.png" alt="">
+              <div class="tekup-social-icon-box style-four position">
+                <ul>
+                  <li>
+                    <a href="https://www.linkedin.com/">
+                      <i class="ri-linkedin-fill"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://twitter.com/">
+                      <i class="ri-twitter-fill"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.instagram.com/">
+                      <i class="ri-instagram-fill"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="tekup-team-data">
+              <a href="#">
+                <h5>小澤 隆</h5>
+              </a>
+              <p>リードエンジニア</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-duration="1000">
+          <div class="tekup-team-wrap">
+            <div class="tekup-team-thumb">
+              <img src="assets/images/team/team4.png" alt="">
+              <div class="tekup-social-icon-box style-four position">
+                <ul>
+                  <li>
+                    <a href="https://www.linkedin.com/">
+                      <i class="ri-linkedin-fill"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://twitter.com/">
+                      <i class="ri-twitter-fill"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.instagram.com/">
+                      <i class="ri-instagram-fill"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="tekup-team-data">
+              <a href="#">
+                <h5>青山 美波</h5>
+              </a>
+              <p>COO 兼 プロダクト責任者</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End section -->
+<section class="company-overview">
+  <h2>会社概要</h2>
+  <table>
+    <tr>
+      <th>会社名</th>
+      <td>株式会社サンエイクローバー</td>
+    </tr>
+    <tr>
+      <th>本社所在地</th>
+      <td>〒170-6012 東京都豊島区東池袋3丁目1-1 サンシャイン60 12階</td>
+    </tr>
+    <tr>
+      <th>アクセス</th>
+      <td>
+        JR・東京メトロ・西武線・東武線「池袋駅」 徒歩8分<br>
+        東京メトロ有楽町線「東池袋駅」 徒歩3分<br>
+        都電荒川線「東池袋四丁目停留場」 徒歩4分
+      </td>
+    </tr>
+    <tr>
+      <th>設立</th>
+      <td>2024年12月17日</td>
+    </tr>
+    <tr>
+      <th>主な事業</th>
+      <td>
+        ・ITコンサルティング<br>
+        ・システム開発<br>
+        ・デジタルマーケティング支援<br>
+        ・AIテクノロジー支援
+      </td>
+    </tr>
+    <tr>
+      <th>代表取締役</th>
+      <td>中西 拓也</td>
+    </tr>
+    <tr>
+      <th>資本金</th>
+      <td>1000万円</td>
+    </tr>
+    <tr>
+      <th>取引銀行</th>
+      <td>GMOあおぞらネット銀行</td>
+    </tr>
+  </table>
+</section>
+
+  <div class="section bg-light1 tekup-section-padding">
+    <div class="container">
+      <div class="tekup-section-title center">
+        <h2>数千のお客様から信頼されるテクノロジーを創り出しています。</h2>
+      </div>
+      <div class="tekup-testimonial-slider">
+        <div class="tekup-testimonial-data">
+          <div class="tekup-testimonial-rating">
+            <ul>
+              <li><i class="ri-star-s-fill"></i></li>
+              <li><i class="ri-star-s-fill"></i></li>
+              <li><i class="ri-star-s-fill"></i></li>
+              <li><i class="ri-star-s-fill"></i></li>
+              <li><i class="ri-star-s-fill"></i></li>
+            </ul>
+          </div>
+          <p>「人」を想い、信頼で築く、「三方よし」のDX。</p>
+          <div class="tekup-testimonial-author">
+            <img src="assets/images/team/team1.png" alt="">
+            <h5>中西 拓也</h5>
+            <span>CEO 兼 Founder</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End section -->
+
+  <div class="section tekup-section-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-5 col-lg-6 d-flex align-items-center">
+        <div class="tekup-default-content">
+          <h2>最高のプロジェクトを、共に。</h2>
+          <p>高度な技術力でお客様の事業をドライブし、システム導入後も万全のサポート体制で支えます。技術的な問題やアシスタンスが必要な場合は、まず私たちにご相談ください。</p>
+          <div class="tekup-contact-info-wrap wrap2 grid-container">
+            <div class="tekup-contact-info mb-0">
+              <i class="ri-map-pin-2-fill"></i>
+              <h5>Address</h5>
+              <p>〒170-6012 東京都豊島区東池袋 3丁目1-1 サンシャイン60 12階</p>
+            </div>
+            <div class="tekup-contact-info mb-0">
+              <i class="ri-mail-fill"></i>
+              <h5>Contact</h5>
+              <a href="mailto:tnakanishi@sanei-clover.com">tnakanishi@sanei-clover.com</a>
+              <a href="tel:123">03-6876-4989</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-6 offset-xl-1 col-lg-6">
+        <div class="tekup-main-form">
+          <h3>お問い合わせ</h3>
+          <p>お気軽にお問い合わせください。迷惑メールをお送りすることはありません。</p>
+          <form action="#">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="tekup-main-field">
+                  <input type="text" placeholder="お名前">
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="tekup-main-field">
+                  <input type="number" placeholder="電話番号">
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <div class="tekup-main-field">
+                  <input type="email" placeholder="Email">
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <div class="tekup-main-field">
+                  <textarea name="textarea" placeholder="メッセージ"></textarea>
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <button id="tekup-main-form-btn" type="button">送信する <i class="ri-arrow-right-up-line"></i></button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="map-container">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3238.9092268350823!2d139.72061779999999!3d35.7284509!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d6e15093bcd%3A0xe7a78e696bb8bdb6!2sSunshine%20City%20Bunka%20Kaikan%20Bldg.!5e0!3m2!1sen!2sjp!4v1757918910687!5m2!1sen!2sjp" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+<br>
+  <!-- End section -->
+
+  <div class="section bg-cover" style="background-image: url(assets/images/v1/cta-bg.png)">
+    <div class="container">
+      <div class="tekup-cta-wrap">
+        <div class="tekup-cta-content center">
+          <h2>共に、未来を<br>創りませんか。</h2>
+          <p>私たちは、イノベーションの設計者であり、進歩の開拓者であり、そして、あなたの成功を支えるパートナーです。人とテクノロジーが調和したときにこそ、真の変革は生まれると信じています。</p>
+          <div class="tekup-extra-mt" data-aos="fade-up" data-aos-duration="600">
+            <a class="tekup-default-btn tekup-white-btn" href="contact-us.html">企画のご相談 <i class="ri-arrow-right-up-line"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End section -->
+
+
+
+  <!-- Footer  -->
+
+   <footer class="tekup-footer-section dark-bg">
+    <div class="container">
+      <div class="tekup-footer-top tekup-section-padding">
+        <div class="row">
+          <div class="col-xl-3 col-lg-12">
+            <div class="tekup-footer-textarea light-color">
+              <a href="index.html">
+                <img src="assets/images/logo/logo-white.svg" alt="">
+              </a>
+              <p>テクノロジーのその先に、「人と、未来と、しあわせ」を。</p>
+              <div class="tekup-social-icon-box style-two">
+                <ul>
+                  <li>
+                    <a href="https://www.facebook.com/">
+                      <i class="ri-facebook-fill"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.linkedin.com/">
+                      <i class="ri-linkedin-fill"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://twitter.com/">
+                      <i class="ri-twitter-fill"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.instagram.com/">
+                      <i class="ri-instagram-fill"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-2 offset-xl-1 col-md-3">
+            <div class="tekup-footer-menu light-color">
+              <div class="tekup-footer-title light-color">
+                <h5>メニュー</h5>
+              </div>
+              <ul>
+                <li><a href="index.html">トップ</a></li>
+                <li><a href="service.html">サービス紹介</a></li>
+                <li><a href="company.html">会社概要</a></li>
+                <li><a href="contact-us.html">お問い合わせ</a></li>
+                <li><a href="recruit.html">採用情報</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-4">
+            <div class="tekup-footer-menu light-color extar-margin">
+              <div class="tekup-footer-title light-color">
+                   <h5>サービス</h5>
+              </div>
+              <ul>
+                <li><a href="service.html">ITコンサルティング</a></li>
+                <li><a href="service.html">システム開発</a></li>
+                <li><a href="service.html">デジタルマーケティング支援</a></li>
+                <li><a href="service.html">AIテクノロジー支援</a></li>
+                <li><a href="service.html">Salesforce AI</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-5">
+            <div class="tekup-footer-title light-color light-color">
+              <h5>ニュースレターに登録する</h5>
+              <p>より良いビジネスソリューションを共に創りましょう</p>
+            </div>
+            <!--<div class="tekup-subscription">
+              <form action="#">
+                <input type="email" placeholder="Email">
+                <button id="tekup-subscription-btn" type="button">
+                  <i class="ri-send-plane-fill"></i>
+                </button>
+              </form>
+            </div>-->
+          </div>
+        </div>
+      </div>
+      <div class="tekup-footer-bottom">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="tekup-copywright light-color right">
+              <p> &copy; <span id="current-year"></span> SANEi CLOVER, INC. All rights reserved.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="tekup-footer-menu light-color style-two right mb-0">
+              <ul>
+                <li><a href="privacy.html">プライバシー</a></li>
+                <li><a href="terms.html">利用規約</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+
+  <!-- scripts -->
+  <script src="assets/js/jquery-3.7.1.min.js"></script>
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/aos.js"></script>
+  <script src="assets/js/menu/menu.js"></script>
+  <script src="assets/js/jquery.magnific-popup.min.js"></script>
+  <script src="assets/js/slick.js"></script>
+  <script src="assets/js/top-to-bottom.js"></script>
+  <script src="assets/js/countdown.js"></script>
+  <script src="assets/js/wow.min.js"></script>
+  <script src="assets/js/skill-bar.js"></script>
+  <script src="assets/js/slick-animation.min.js"></script>
+  <script src="assets/js/faq.js"></script>
+  <script src="assets/js/isotope.pkgd.min.js"></script>
+  <script src="assets/js/tabs-slider.js"></script>
+  <script src="assets/js/product-increment.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyArZVfNvjnLNwJZlLJKuOiWHZ6vtQzzb1Y"></script>
+
+  <script src="assets/js/app.js"></script>
+
+
+</body>
+</html>
