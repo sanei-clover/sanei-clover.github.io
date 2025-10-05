@@ -23,9 +23,28 @@
 
 
   <!-- Code Editor  -->
-
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/app.min.css">
+
+  <!-- scripts -->
+  <script src="assets/js/jquery-3.7.1.min.js"></script>
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/aos.js"></script>
+  <script src="assets/js/menu/menu.js"></script>
+  <script src="assets/js/jquery.magnific-popup.min.js"></script>
+  <script src="assets/js/slick.js"></script>
+  <script src="assets/js/top-to-bottom.js"></script>
+  <script src="assets/js/countdown.js"></script>
+  <script src="assets/js/wow.min.js"></script>
+  <script src="assets/js/skill-bar.js"></script>
+  <script src="assets/js/slick-animation.min.js"></script>
+  <script src="assets/js/faq.js"></script>
+  <script src="assets/js/isotope.pkgd.min.js"></script>
+  <script src="assets/js/tabs-slider.js"></script>
+  <script src="assets/js/product-increment.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyArZVfNvjnLNwJZlLJKuOiWHZ6vtQzzb1Y"></script>
+
+  <script src="assets/js/app.js"></script>
 
   <style>
         /* CSS for Hero Section with Video Background */
@@ -106,6 +125,14 @@
         }
 
 </style>
+
+<script>
+  $(function(){
+    $("#footer").load("/footer.html");
+  });
+</script>
+
+
 </head>
 
 <body class="light">
@@ -140,23 +167,6 @@
 
 
   <header class="site-header tekup-header-section site-header--menu-right light-color" id="sticky-menu">
-    <!--<div class="tekup-header-top bg-accent">
-      <div class="container-fuild">
-        <div class="tekup-header-info-wrap">
-          <div class="tekup-header-info">
-            <ul>
-              <li><i class="ri-map-pin-2-fill"></i>〒170-6012  東京都豊島区東池袋3丁目1-1 サンシャイン60 12階</li>
-            </ul>
-          </div>
-          <div class="tekup-header-info">
-            <ul>
-              <li><a href="tel:123"><i class="ri-phone-fill"></i>03-6876-4989</a></li>
-              <li><a href="mailto:tnakanishi@sanei-clover.com"><i class="ri-mail-fill"></i>tnakanishi@sanei-clover.com</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>-->
     <div class="container-fuild">
       <div class="tekup-header-bottom border_bottom">
         <nav class="navbar site-navbar">
@@ -311,6 +321,7 @@
         <div class="col-lg-5 d-flex align-items-end justify-content-end">
           <div class="tekup-hero-rating">
             <img class="tekup-hero-author" src="assets/images/v1/author.png" alt="">
+            <!--
             <p>平均評価4.8を獲得。<br>業界トップの実績。</p>
             <ul>
               <li><i class="ri-star-s-fill"></i></li>
@@ -319,6 +330,7 @@
               <li><i class="ri-star-s-fill"></i></li>
               <li><i class="ri-star-s-fill"></i></li>
             </ul>
+            -->
           </div>
         </div>
       </div>
@@ -409,9 +421,9 @@
           <div class="tekup-default-content">
             <h4>私たちが目指すのは、テクノロジーでつなぐ「人と、未来と、しあわせ」です。</h4>
             <br>
-         <p>テクノロジーで、人と未来をしあわせに。</p>
-<p>私たちは「三方よし」の精神で、技術とまごころを尽くし、価値ある変革を創造します。</p>
-<p>単なるシステム開発ではなく、お客様との信頼を築き、「頼られる」存在になること。それが私たちの使命です。</p>
+            <p>テクノロジーで、人と未来をしあわせに。</p>
+            <p>私たちは「三方よし」の精神で、技術とまごころを尽くし、価値ある変革を創造します。</p>
+            <p>単なるシステム開発ではなく、お客様との信頼を築き、「頼られる」存在になること。それが私たちの使命です。</p>
             <div class="tekup-icon-list">
               <ul>
                 <li><i class="ri-check-line"></i>信頼第一：お客様の課題に真摯に向き合います。</li>
@@ -780,127 +792,7 @@
     </div>
   </div>
 
-  <footer class="tekup-footer-section dark-bg extra-minus-margin">
-    <div class="container">
-      <div class="tekup-footer-top extra-padding">
-        <div class="row">
-          <div class="col-xl-4 col-lg-12">
-            <div class="tekup-footer-textarea light-color">
-              <a href="index.html">
-                <img src="assets/images/logo/logob.png" alt="">
-              </a>
-              <p>テクノロジーのその先に、「人と、未来と、しあわせ」を。</p>
-              <div class="tekup-footer-info">
-                <ul>
-                  <li><a href="tel:123"><i class="ri-phone-fill"></i>03-6876-4989</a></li>
-                  <li><a href="mailto:tnakanishi@sanei-clover.com"><i class="ri-mail-fill"></i>tnakanishi@sanei-clover.com</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-2 offset-xl-1 col-md-4">
-            <div class="tekup-footer-menu light-color">
-              <div class="tekup-footer-title light-color">
-                <h5>メニュー</h5>
-              </div>
-              <ul>
-                <li><a href="index.html">トップ</a></li>
-                <li><a href="service.html">サービス紹介</a></li>
-                <li><a href="about-us.html">会社概要</a></li>
-                <li><a href="contact-us.html">お問い合わせ</a></li>
-                <li><a href="recruit.html">採用情報</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-xl-3 col-md-4">
-            <div class="tekup-footer-menu light-color extar-margin">
-              <div class="tekup-footer-title light-color">
-                <h5>サービス</h5>
-              </div>
-              <ul>
-                <li><a href="service.html">ITコンサルティング</a></li>
-                <li><a href="service.html">システム開発</a></li>
-                <li><a href="service.html">デジタルマーケティング支援</a></li>
-                <li><a href="service.html">AIテクノロジー支援</a></li>
-                <li><a href="service.html">Salesforce AI</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-xl-2 col-md-4">
-            <div class="tekup-footer-menu light-color mb-0">
-              <div class="tekup-footer-title light-color">
-                <h5>インフォメーション</h5>
-              </div>
-              <ul>
-                <li><a href="privacy.html">プライバシー</a></li>
-                <li><a href="terms.html">利用規約</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="tekup-footer-bottom">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="tekup-copywright light-color right">
-              <p> &copy; <span id="current-year"></span> SANEi CLOVER, INC. All rights reserved.</p>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="tekup-social-icon-box style-two right">
-              <ul>
-                <li>
-                  <a href="https://www.facebook.com/">
-                    <i class="ri-facebook-fill"></i>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.linkedin.com/">
-                    <i class="ri-linkedin-fill"></i>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://twitter.com/">
-                    <i class="ri-twitter-fill"></i>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.instagram.com/">
-                    <i class="ri-instagram-fill"></i>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-
-
-
-
-  <!-- scripts -->
-  <script src="assets/js/jquery-3.7.1.min.js"></script>
-  <script src="assets/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/aos.js"></script>
-  <script src="assets/js/menu/menu.js"></script>
-  <script src="assets/js/jquery.magnific-popup.min.js"></script>
-  <script src="assets/js/slick.js"></script>
-  <script src="assets/js/top-to-bottom.js"></script>
-  <script src="assets/js/countdown.js"></script>
-  <script src="assets/js/wow.min.js"></script>
-  <script src="assets/js/skill-bar.js"></script>
-  <script src="assets/js/slick-animation.min.js"></script>
-  <script src="assets/js/faq.js"></script>
-  <script src="assets/js/isotope.pkgd.min.js"></script>
-  <script src="assets/js/tabs-slider.js"></script>
-  <script src="assets/js/product-increment.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyArZVfNvjnLNwJZlLJKuOiWHZ6vtQzzb1Y"></script>
-
-  <script src="assets/js/app.js"></script>
-
+  <div id="footer"></div>
 
 </body>
 </html>
