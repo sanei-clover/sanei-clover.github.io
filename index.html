@@ -39,6 +39,51 @@
     <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyArZVfNvjnLNwJZlLJKuOiWHZ6vtQzzb1Y"></script>
     <script src="assets/js/app.js"></script>
     <style>
+        /* Custom Header Styles - Remove padding and make fully opaque */
+        .tekup-header-section {
+            padding: 0 !important;
+        }
+        .tekup-header-section .container-fuild {
+            padding: 0 !important;
+            max-width: 100% !important;
+            width: 100% !important;
+            margin: 0 !important;
+        }
+        .tekup-header-section .tekup-header-bottom {
+            background-color: #1a1a1a !important;
+            opacity: 1 !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+        .tekup-header-section .navbar {
+            padding: 12px 20px !important;
+            margin: 0 !important;
+            width: 100% !important;
+            min-height: auto !important;
+        }
+        .tekup-header-section .brand-logo {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        .tekup-header-section .brand-logo img {
+            height: 40px !important;
+            width: auto !important;
+        }
+        /* Menu text color - white */
+        .tekup-header-section .nav-link-item {
+            color: #ffffff !important;
+            padding: 10px 15px !important;
+            line-height: 1.4 !important;
+        }
+        .tekup-header-section .nav-link-item:hover {
+            color: #4CAF50 !important;
+        }
+        /* Search icon and hamburger menu color */
+        .tekup-header-section .tekup-header-search i,
+        .tekup-header-section .tekup-header-barger span {
+            color: #ffffff !important;
+        }
+        
         /* CSS for Hero Section with Video Background */
         .tekup-hero-section {
             position: relative;
@@ -150,9 +195,9 @@
         </div>
     </div>
     <!-- End All Js -->
-    <header class="site-header tekup-header-section site-header--menu-right light-color" id="sticky-menu">
-        <div class="container-fuild">
-            <div class="tekup-header-bottom border_bottom">
+    <header class="site-header tekup-header-section site-header--menu-right" id="sticky-menu">
+        <div class="container-fuild" style="padding: 0; max-width: 100%; width: 100%; margin: 0;">
+            <div class="tekup-header-bottom" style="background-color: #1a1a1a; opacity: 1; padding: 0;">
                 <nav class="navbar site-navbar">
                     <!-- Brand Logo-->
                     <div class="brand-logo">
