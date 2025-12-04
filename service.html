@@ -40,6 +40,7 @@
     <script src="assets/js/app.js"></script>
     <script>
         $(function() {
+            $("#header").load("/includes/header.html");
             $("#footer").load("/footer.html");
         });
     </script>
@@ -69,61 +70,7 @@
         </div>
     </div>
     <!-- End All Js -->
-    <header class="site-header tekup-header-section" id="sticky-menu">
-        <div class="tekup-header-bottom bg-white">
-            <div class="container-fuild">
-                <nav class="navbar site-navbar">
-                    <!-- Brand Logo-->
-                    <div class="brand-logo">
-                        <a href="index.html">
-                            <img src="assets/images/logo/logo-dark.svg" alt="" class="light-version-logo">
-                        </a>
-                    </div>
-                    <div class="menu-block-wrapper">
-                        <div class="menu-overlay"></div>
-                        <nav class="menu-block" id="append-menu-header">
-                            <div class="mobile-menu-head">
-                                <div class="go-back">
-                                    <i class="fa fa-angle-left"></i>
-                                </div>
-                                <div class="current-menu-title"></div>
-                                <div class="mobile-menu-close">&times;</div>
-                            </div>
-                            <ul class="site-menu-main">
-                                <li class="nav-item nav-item-has-children">
-                                    <a href="index.html" class="nav-link-item drop-trigger">トップ</i></a>
-                                <li class="nav-item">
-                                    <a href="service.html" class="nav-link-item">サービス紹介</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="about.html" class="nav-link-item">会社概要</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="contact.html" class="nav-link-item">お問い合わせ</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="recruit.html" class="nav-link-item">採用情報</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <div class="tekup-header-search-section">
-                        <div class="container">
-                            <div class="tekup-header-search-box">
-                                <input type="search" placeholder="Search here...">
-                                <button id="header-search" type="button"><img src="assets/images/v1/search-dark.png" alt=""></button>
-                                <p>Type above and press Enter to search. Press Close to cancel.</p>
-                            </div>
-                        </div>
-                        <div class="tekup-header-search-close">
-                            <i class="ri-close-line"></i>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-        </div>
-    </header>
-    <div class="search-overlay"></div>
+    <div id="header"></div>
     <!--End landex-header-section -->
     <div class="tekup-breadcrumb" style="background-image: url(assets/images/breadcrumb/breadcrumb.png)">
         <div class="container">
