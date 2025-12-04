@@ -2854,7 +2854,7 @@ button#tekup-subscription-btn i:hover {
   position: relative;
   background-size: cover;
   background-position: center center;
-  margin-top: 157px;
+  margin-top: 0;
 }
 .tekup-breadcrumb:before {
   content: " ";
@@ -2871,7 +2871,7 @@ button#tekup-subscription-btn i:hover {
 @media (max-width: 991px) {
   .tekup-breadcrumb {
     padding: 100px 0 80px;
-    margin-top: 90px;
+    margin-top: 0;
   }
 }
 @media (max-width: 767px) {
@@ -2881,7 +2881,7 @@ button#tekup-subscription-btn i:hover {
 }
 @media (max-width: 479px) {
   .tekup-breadcrumb {
-    margin-top: 75px;
+    margin-top: 0;
   }
 }
 
