@@ -19,13 +19,6 @@
     $(".tekup-preloader-wrap").fadeOut(500);
 
     /*--------------------------------------------------------------
-    TEKUP HEADER SEARCH JS INIT
-    ------------------------------------------------------------*/
-    $(".tekup-header-search, .tekup-header-search-close, .search-overlay").click(function () {
-      $(".tekup-header-search-section, .search-overlay").toggleClass("open");
-    });
-
-    /*--------------------------------------------------------------
     TEKUP STICKY MENU JS INIT
     --------------------------------------------------------------*/
     $(window).on('scroll', function () {
