@@ -32,11 +32,11 @@
     /*--------------------------------------------------------------
     TEKUP MENU SIDEBAR JS INIT
     --------------------------------------------------------------*/
-    $(".tekup-header-barger").on("click", function (e) {
+    $(document).on("click", ".tekup-header-barger", function (e) {
       $(".tekup-sidemenu-column, .offcanvas-overlay").addClass("active");
-      event.preventDefault(e);
+      e.preventDefault();
     });
-    $(".tekup-sidemenu-close, .offcanvas-overlay").on("click", function () {
+    $(document).on("click", ".tekup-sidemenu-close, .offcanvas-overlay", function () {
       $(".tekup-sidemenu-column, .offcanvas-overlay").removeClass("active");
     });
 
