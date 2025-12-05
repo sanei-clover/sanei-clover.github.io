@@ -191,6 +191,32 @@
         $(function() {
             $("#header").load("/includes/header.html");
             $("#footer").load("/includes/footer.html");
+
+            document.getElementById("form").addEventListener("submit", function(event) {
+                event.preventDefault();
+                const formData = new FormData(this);
+                const data = {
+                    name: formData.get("name"),
+                    phone: formData.get("phone"),
+                    email: formData.get("email"),
+                    message: formData.get("message")
+                };
+                fetch("https://script.google.com/macros/s/AKfycbyBsnb7tvEMmIoUuHfc-qTOl1CzZfBqzuvoCP0T5xlUHepp5TAyPb-bW3b9u-L99X7fMA/exec", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "text/plain"
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(response => response.json())
+                .then(result => {
+                    alert("お問い合わせありがとうございます。");
+                    this.reset();
+                })
+                .catch(error => {
+                    alert("送信中にエラーが発生しました。");
+                });
+            });
         });
     </script>
 </head>
@@ -258,31 +284,32 @@
                     <div class="tekup-main-form">
                         <h3>お問い合わせ</h3>
                         <p>お気軽にお問い合わせください。迷惑メールをお送りすることはありません。</p>
-                        <form action="#">
+
+                        <!-- 問い合わせフォーム -->
+                        <form id="form">
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="tekup-main-field">
-                                        <input type="text" placeholder="お名前">
+                                        <input type="text" placeholder="お名前" name="name" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="tekup-main-field">
-                                        <input type="number" placeholder="電話番号">
+                                        <input type="number" placeholder="電話番号" name="phone" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="tekup-main-field">
-                                        <input type="email" placeholder="Email">
+                                        <input type="email" placeholder="Email" name="email" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="tekup-main-field">
-                                        <textarea name="textarea" placeholder="メッセージ"></textarea>
+                                        <textarea name="message" placeholder="メッセージ" required></textarea>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
-                                    <!-- Salesforce Web-to-XXX 開発 -->
-                                    <button id="tekup-main-form-btn" type="button">送信する <i class="ri-arrow-right-up-line"></i></button>
+                                    <button id="tekup-main-form-btn" type="submit">送信する <i class="ri-arrow-right-up-line"></i></button>
                                 </div>
                             </div>
                         </form>

@@ -2,7 +2,8 @@
 株式会社サンエイクローバーのホームページです。
 
 # フォーム
-Zapierを利用する。
+GASを利用する。
+https://github.com/sanei-clover/gas-functions
 
 ## ドメイン
 https://www.sanei-clover.com
