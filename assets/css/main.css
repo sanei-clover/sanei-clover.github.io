@@ -902,9 +902,15 @@
     color: #000!important;
 }
 
-@media (min-width: 480px) {
+@media (min-width: 992px) {
   .d-xs-inline-flex {
     display: inline-flex !important;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .d-xs-inline-flex {
+    display: none !important;
   }
 }
 
