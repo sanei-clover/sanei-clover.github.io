@@ -62,8 +62,8 @@ font-weight: 400;
 overflow-x: hidden;
 background-color: var(--white-bg);
 counter-reset: my-sec-counter;
-font-size: 22px;
-line-height: 32px;
+font-size: 16px;
+line-height: 1.6;
 }
 
 hr
@@ -285,65 +285,65 @@ h6,
 
 h1,
 .h1 {
-  font-size: 100px;
-  line-height: 1em;
+  font-size: 48px;
+  line-height: 1.2em;
   margin-bottom: 24px;
   color: var(--white-color);
 }
 @media (max-width: 1400px) {
   h1,
   .h1 {
-    font-size: 70px;
+    font-size: 42px;
   }
 }
 @media (max-width: 767px) {
   h1,
   .h1 {
-    font-size: 48px;
+    font-size: 32px;
     margin-bottom: 15px;
   }
 }
 
 h2,
 .h2 {
-  font-size: 56px;
-  line-height: 1.14em; /* 116.667% */
+  font-size: 36px;
+  line-height: 1.3em; /* 116.667% */
 }
 @media (max-width: 991px) {
   h2,
   .h2 {
-    font-size: 50px;
+    font-size: 32px;
   }
 }
 @media (max-width: 767px) {
   h2,
   .h2 {
-    font-size: 40px;
+    font-size: 28px;
   }
 }
 
 h3,
 .h3 {
-  font-size: 30px;
-  line-height: 1.26em;
+  font-size: 28px;
+  line-height: 1.4em;
 }
 @media (max-width: 767px) {
   h3,
   .h3 {
-    line-height: 1.2em;
+    line-height: 1.4em;
   }
 }
 
 h4,
 .h4 {
-  font-size: 30px;
-  line-height: 1.26em;
+  font-size: 24px;
+  line-height: 1.4em;
 }
 
 h5,
 .h5 {
-  font-size: 26px;
-  line-height: 1.3em;
+  font-size: 20px;
+  line-height: 1.5em;
 }
 
 h6,
