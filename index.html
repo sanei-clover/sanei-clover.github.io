@@ -1,728 +1,355 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SANEi CLOVER || Salesforce / 生成AI / 各種連携</title>
-    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
-    <!--- End favicon-->
-    <link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet"> <!-- End google font  -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
-    <link rel="stylesheet" href="assets/css/slick.css">
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/aos.css">
-    <link rel="stylesheet" href="assets/css/remixicon.css">
-    <!-- Code Editor  -->
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/app.min.css">
-    <!-- scripts -->
-    <script src="assets/js/jquery-3.7.1.min.js"></script>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/aos.js"></script>
-    <script src="assets/js/menu/menu.js"></script>
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
-    <script src="assets/js/slick.js"></script>
-    <script src="assets/js/top-to-bottom.js"></script>
-    <script src="assets/js/countdown.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/skill-bar.js"></script>
-    <script src="assets/js/slick-animation.min.js"></script>
-    <script src="assets/js/faq.js"></script>
-    <script src="assets/js/isotope.pkgd.min.js"></script>
-    <script src="assets/js/tabs-slider.js"></script>
-    <script src="assets/js/product-increment.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyArZVfNvjnLNwJZlLJKuOiWHZ6vtQzzb1Y"></script>
-    <script src="assets/js/app.js"></script>
-    <style>
-        /* Custom Header Styles - Remove padding and make fully opaque */
-        .tekup-header-section {
-            padding: 0 !important;
-        }
-        .tekup-header-section .container-fuild {
-            padding: 0 !important;
-            max-width: 100% !important;
-            width: 100% !important;
-            margin: 0 !important;
-        }
-        .tekup-header-section .tekup-header-bottom {
-            background-color: #1a1a1a !important;
-            opacity: 1 !important;
-            padding: 0 !important;
-            margin: 0 !important;
-        }
-        .tekup-header-section .navbar {
-            padding: 12px 20px !important;
-            margin: 0 !important;
-            width: 100% !important;
-            min-height: auto !important;
-        }
-        .tekup-header-section .brand-logo {
-            margin: 0 !important;
-            padding: 0 !important;
-        }
-        .tekup-header-section .brand-logo img {
-            height: 40px !important;
-            width: auto !important;
-        }
-        /* Menu text color - white */
-        .tekup-header-section .nav-link-item {
-            color: #ffffff !important;
-            padding: 10px 15px !important;
-            line-height: 1.4 !important;
-        }
-        .tekup-header-section .nav-link-item:hover {
-            color: #4CAF50 !important;
-        }
-        /* Search icon and hamburger menu color */
-        .tekup-header-section .tekup-header-search i,
-        .tekup-header-section .tekup-header-barger span {
-            color: #ffffff !important;
-        }
-        
-        /* CSS for Hero Section with Video Background */
-        .tekup-hero-section {
-            position: relative;
-            overflow: hidden;
-            height: 100vh;
-            /* Adjust as needed */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* This is the new CSS for the semi-transparent overlay */
-        .tekup-hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            /* Adjust the last value (0.2) to control the transparency */
-            background-color: rgba(0, 0, 0, 0.2);
-            z-index: 0;
-        }
-
-        .hero-video-bg {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            z-index: -1;
-            transform: translate(-50%, -50%);
-        }
-
-        .tekup-hero-content,
-        .tekup-hero-rating {
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Additional styles from your existing code to make it look right */
-        .container {
-            position: relative;
-            z-index: 1;
-        }
-
-        .white-color {
-            color: #fff;
-        }
-
-        .tekup-hero-content h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .tekup-hero-content p {
-            font-size: 1.25rem;
-            max-width: 600px;
-        }
-
-        .tekup-default-btn {
-            background: #007bff;
-            color: #fff;
-            padding: 15px 30px;
-            border-radius: 5px;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .tekup-hero-rating {
-            text-align: right;
-        }
-
-        .tekup-hero-author {
-            max-width: 100px;
-            /* Adjust as needed */
-        }
-    </style>
-    <script>
-        $(function() {
-            $("#header").load("/includes/header.html");
-            $("#footer").load("/includes/footer.html");
-        });
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>株式会社サンエイクローバー — テクノロジーのその先に、「人と、未来と、しあわせ」を。</title>
+  <meta name="description" content="Salesforce・生成AI・各種システム連携で、企業のDXを支援する株式会社サンエイクローバー。三方よしの精神で、技術とまごころを尽くします。">
+  <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+JP:wght@300;400;500&family=Shippori+Mincho+B1:wght@400;500;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/site.css">
 </head>
+<body>
+  <div id="header"></div>
+  <script>
+    fetch("/includes/header.html").then(r => r.text()).then(html => {
+      document.getElementById("header").outerHTML = html;
+      const s = document.createElement("script"); s.src = "/assets/js/site.js"; document.body.appendChild(s);
+    });
+  </script>
 
-<body class="light">
-    <div class="tekup-preloader-wrap">
-        <div class="tekup-preloader">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>
-    <div class="progress-bar-container">
-        <div class="progress-bar"></div>
-    </div>
-    <!-- progress circle -->
-    <div class="paginacontainer">
-        <div class="progress-wrap">
-            <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-            </svg>
-            <div class="top-arrow">
-                <img src="assets/images/rightarrow.svg" alt="">
-            </div>
-        </div>
-    </div>
-    <!-- End All Js -->
-    <div id="header"></div>
-    <div class="tekup-sidemenu-wraper">
-        <div class="tekup-sidemenu-column">
-            <div class="tekup-sidemenu-body">
-                <div class="tekup-sidemenu-logo">
-                    <a href=""><img src="assets/images/logo/logo.png" alt=""></a>
-                </div>
-                <p>テクノロジーのその先に、「人と、未来と、しあわせ」を。</p>
-                <div class="tekup-sidemenu-thumb">
-                    <img src="assets/images/hero/hero-bg1.png" alt="">
-                </div>
-                <div class="tekup-contact-info-wrap">
-                    <div class="tekup-contact-info">
-                        <i class="ri-map-pin-2-fill"></i>
-                        <h5>住所</h5>
-                        <p>〒170-6012 東京都豊島区東池袋<br> 3丁目1-1 サンシャイン60 12階</p>
-                    </div>
-                    <div class="tekup-contact-info">
-                        <i class="ri-mail-fill"></i>
-                        <h5>お問い合わせ</h5>
-                        <a href="mailto:tnakanishi@sanei-clover.com">tnakanishi@sanei-clover.com</a>
-                        <a href="tel:123">03-6876-4989</a>
-                    </div>
-                </div>
-                <div class="tekup-social-icon-box">
-                    <ul>
-                        <li>
-                            <a href="https://www.facebook.com/">
-                                <i class="ri-facebook-fill"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.linkedin.com/">
-                                <i class="ri-linkedin-fill"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://twitter.com/">
-                                <i class="ri-twitter-fill"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.instagram.com/">
-                                <i class="ri-instagram-fill"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <span class="tekup-sidemenu-close">
-                <i class="ri-close-line"></i>
-            </span>
-        </div>
-        <div class="offcanvas-overlay"></div>
-    </div>
-    <div class="offcanves-menu"></div>
-    <div class="tekup-hero-section">
-        <video autoplay muted loop class="hero-video-bg">
-            <source src="assets/images/hero/hero1.mp4" type="video/mp4">
-            <source src="assets/images/hero/hero1.webm" type="video/webm">
-        </video>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7">
-                    <div class="tekup-hero-content white-color">
-                        <h1>株式会社​サンエイクローバー</h1>
-                        <p>テクノロジーのその先に、「人と、未来と、しあわせ」を。</p>
-                    </div>
-                </div>
-                <div class="col-lg-5 d-flex align-items-end justify-content-end">
-                    <div class="tekup-hero-rating">
-                        <img class="tekup-hero-author" src="assets/images/v1/author.png" alt="">
-                        <!--
-                        <p>平均評価4.8を獲得。<br>業界トップの実績。</p>
-                        <ul>
-                            <li><i class="ri-star-s-fill"></i></li>
-                            <li><i class="ri-star-s-fill"></i></li>
-                            <li><i class="ri-star-s-fill"></i></li>
-                            <li><i class="ri-star-s-fill"></i></li>
-                            <li><i class="ri-star-s-fill"></i></li>
-                        </ul>
-                        -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End section -->
-    <div class="sectin bg-light1 tekup-section-padding">
-        <div class="container">
-            <div class="tekup-section-title center">
-                <h2>事業内容</h2>
-            </div>
-            <div class="tekup-4column-slider" data-aos="fade-up" data-aos-duration="600">
-                <div class="tekup-iconbox-wrap">
-                    <div class="tekup-iconbox-icon">
-                        <img src="assets/images/iconbox/icon1.png" alt="">
-                    </div>
-                    <div class="tekup-iconbox-data">
-                        <a href="service.html">
-                            <h4>業務システム開発・運用支援</h4>
-                        </a>
-                        <p>お客様の業務に深く寄り添い、本当に使われる業務システムを開発します。要件定義から運用・保守まで、一貫した支援を提供します。</p>
-                    </div>
-                </div>
-                <div class="tekup-iconbox-wrap">
-                    <div class="tekup-iconbox-icon">
-                        <img src="assets/images/iconbox/icon2.png" alt="">
-                    </div>
-                    <div class="tekup-iconbox-data">
-                        <a href="service.html">
-                            <h4>システムエンジニアリングサービス</h4>
-                        </a>
-                        <p>お客様のプロジェクトに深く関わるパートナーとして、最適なエンジニアをアサイン。技術力だけでなく、信頼関係を築きながら課題解決を支援します。</p>
-                    </div>
-                </div>
-                <div class="tekup-iconbox-wrap">
-                    <div class="tekup-iconbox-icon">
-                        <img src="assets/images/iconbox/icon3.png" alt="">
-                    </div>
-                    <div class="tekup-iconbox-data">
-                        <a href="service.html">
-                            <h4> AI・クラウドを利用したDX支援</h4>
-                        </a>
-                        <p>Salesforceを中心としたクラウドソリューションに、AIや業務システムを組み合わせたDX支援。現場で本当に機能する仕組みを設計・構築します。</p>
-                    </div>
-                </div>
-                <div class="tekup-iconbox-wrap">
-                    <div class="tekup-iconbox-icon">
-                        <img src="assets/images/iconbox/icon4.png" alt="">
-                    </div>
-                    <div class="tekup-iconbox-data">
-                        <a href="service.html">
-                            <h4>Webアプリケーション開発</h4>
-                        </a>
-                        <p>使う人の目線に立ち、お客様一社一社の課題に合わせたWebアプリケーションをゼロから開発。ビジネスに最適な"業務エンジン"を共につくります。</p>
-                    </div>
-                </div>
-                <div class="tekup-iconbox-wrap">
-                    <div class="tekup-iconbox-icon">
-                        <img src="assets/images/iconbox/icon3.png" alt="">
-                    </div>
-                    <div class="tekup-iconbox-data">
-                        <a href="service.html">
-                            <h4>企画のご相談</h4>
-                        </a>
-                        <p>お客様の課題やニーズを理解し、共に価値を創造するための第一歩として、お気軽にご相談いただける窓口です。</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End section -->
-    <div class="section tekup-section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-6 col-lg-6" data-aos="fade-up" data-aos-duration="600">
-                    <div class="tekup-thumb">
-                        <img src="assets/images/v1/thumb1.png" alt="">
-                        <div class="tekup-thumb-card">
-                            <!--<img src="assets/images/v3/Satisfaction.png" alt="">-->
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-5 offset-xl-1 col-lg-6 d-flex align-items-center">
-                    <div class="tekup-default-content">
-                        <h4>私たちが目指すのは、テクノロジーでつなぐ「人と、未来と、しあわせ」です。</h4>
-                        <br>
-                        <p>テクノロジーで、人と未来をしあわせに。</p>
-                        <p>私たちは「三方よし」の精神で、技術とまごころを尽くし、価値ある変革を創造します。</p>
-                        <p>単なるシステム開発ではなく、お客様との信頼を築き、「頼られる」存在になること。それが私たちの使命です。</p>
-                        <div class="tekup-icon-list">
-                            <ul>
-                                <li><i class="ri-check-line"></i>信頼第一：お客様の課題に真摯に向き合います。</li>
-                                <li><i class="ri-check-line"></i>共創の精神：共に考え、共に未来を創ります。</li>
-                                <li><i class="ri-check-line"></i>丁寧な仕事：一つひとつの業務に心を込めます。</li>
-                            </ul>
-                        </div>
-                        <div class="tekup-extra-mt">
-                            <a class="tekup-default-btn" href="about.html">私たちについて <i class="ri-arrow-right-up-line"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End section -->
-    <div class="tekup-portfolio-section tekup-section-padding-top">
-        <div class="container">
-            <div class="tekup-section-title center light-color">
-                <h2>実績紹介</h2>
-            </div>
-        </div>
-        <div class="tekup-portfolio-slider" data-aos="fade-up" data-aos-duration="600">
-            <div class="tekup-portfolio-wrap">
-                <div class="tekup-portfolio-thumb">
-                    <img src="assets/images/p2/p_1.png" alt="">
-                    <div class="tekup-portfolio-data">
-                        <a href="#">
-                            <h5>Cognito Cloud</h5>
-                        </a>
-                        <p>UI/UX・AI</p>
-                        <a class="tekup-portfolio-btn" href="#"><i class="ri-arrow-right-up-line"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="tekup-portfolio-wrap">
-                <div class="tekup-portfolio-thumb">
-                    <img src="assets/images/p2/p_2.png" alt="">
-                    <div class="tekup-portfolio-data">
-                        <a href="#">
-                            <h5>Qchat</h5>
-                        </a>
-                        <p>Salesforce X AI</p>
-                        <a class="tekup-portfolio-btn" href="#"><i class="ri-arrow-right-up-line"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="tekup-portfolio-wrap">
-                <div class="tekup-portfolio-thumb">
-                    <img src="assets/images/p2/p_4.png" alt="">
-                    <div class="tekup-portfolio-data">
-                        <a href="#">
-                            <h5>デジタルマーケティング</h5>
-                        </a>
-                        <p>Google Analytics X Google Adwords</p>
-                        <a class="tekup-portfolio-btn" href="#"><i class="ri-arrow-right-up-line"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End section -->
-    <div class="section tekup-section-padding2">
-        <div class="container">
-            <div class="tekup-section-title center">
-                <h2>私たちの開発プロセス</h2>
-            </div>
-            <div class="tekup-iconbox-line" style="background-image: url(assets/images/v1/line.png)">
-                <div class="row">
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="400">
-                        <div class="tekup-iconbox-wrap2">
-                            <div class="tekup-iconbox-icon2">
-                                <img src="assets/images/iconbox/icon5.png" alt="">
-                                <div class="tekup-iconbox-count"> 01 </div>
-                            </div>
-                            <div class="tekup-iconbox-data2">
-                                <a href="service.html">
-                                    <h5>構想策定・計画</h5>
-                                </a>
-                                <p>お客様の課題に深く向き合い、本当に必要なシステムを共に探求。未来を見据えた最適な計画を立案します。</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="600">
-                        <div class="tekup-iconbox-wrap2">
-                            <div class="tekup-iconbox-icon2">
-                                <img src="assets/images/iconbox/icon6.png" alt="">
-                                <div class="tekup-iconbox-count"> 02 </div>
-                            </div>
-                            <div class="tekup-iconbox-data2">
-                                <a href="service.html">
-                                    <h5>設計・開発</h5>
-                                </a>
-                                <p>確かな技術力で「本当に使われる」システムを形にします。使いやすさやビジネスへの貢献を意識した開発を行います。</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3" data-aos="fade-up" data-aos-duration="800">
-                        <div class="tekup-iconbox-wrap2">
-                            <div class="tekup-iconbox-icon2">
-                                <img src="assets/images/iconbox/icon7.png" alt="">
-                                <div class="tekup-iconbox-count"> 03 </div>
-                            </div>
-                            <div class="tekup-iconbox-data2">
-                                <a href="service.html">
-                                    <h5>テスト・運用・改善</h5>
-                                </a>
-                                <p>導入後も一貫してサポート。変化に対応し、システムを”業務の土台”として共に育てていきます。</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End section -->
+  <main id="main">
 
-    <!--
-    <div class="section bg-light1 tekup-section-padding2">
-        <div class="container">
-            <div class="tekup-section-title center">
-                <h2>チームメンバー</h2>
+    <!-- ─── HERO ─── -->
+    <section class="hero">
+      <div class="edge">
+        <div class="hero__inner">
+          <div>
+            <div class="hero__eyebrow eyebrow reveal">S / 00 &nbsp;Sanei&nbsp;Clover</div>
+            <h1 class="hero__title reveal" data-stagger="1">
+              テクノロジーの<br>
+              その先に、<br>
+              <span class="accent">人と、未来と、</span><br>
+              <span class="accent">しあわせ</span>を。
+              <em>Technology that quietly serves people, the future, and happiness.</em>
+            </h1>
+            <p class="hero__lede reveal" data-stagger="2">Salesforce・生成AI・各種連携を軸に、業務システムからDX全体の設計まで。一社一社の現場に深く寄り添い、本当に使われる仕組みを共につくります。</p>
+          </div>
+          <aside class="hero__meta">
+            <div class="hero__meta-row reveal" data-stagger="2">
+              <span class="hero__meta-label">Established</span>
+              <span class="hero__meta-val">2024.12.17</span>
             </div>
-            <div class="row">
-                <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-duration="400">
-                    <div class="tekup-team-wrap">
-                        <div class="tekup-team-thumb">
-                            <img src="assets/images/team/team1.png" alt="">
-                            <div class="tekup-social-icon-box style-four position">
-                                <ul>
-                                    <li>
-                                        <a href="https://www.linkedin.com/">
-                                            <i class="ri-linkedin-fill"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://twitter.com/">
-                                            <i class="ri-twitter-fill"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.instagram.com/">
-                                            <i class="ri-instagram-fill"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="tekup-team-data">
-                            <a href="#">
-                                <h5>中西 拓也</h5>
-                            </a>
-                            <p>CEO 兼 Founder</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-duration="600">
-                    <div class="tekup-team-wrap">
-                        <div class="tekup-team-thumb">
-                            <img src="assets/images/team/team2.png" alt="">
-                            <div class="tekup-social-icon-box style-four position">
-                                <ul>
-                                    <li>
-                                        <a href="https://www.linkedin.com/">
-                                            <i class="ri-linkedin-fill"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://twitter.com/">
-                                            <i class="ri-twitter-fill"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.instagram.com/">
-                                            <i class="ri-instagram-fill"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="tekup-team-data">
-                            <a href="#">
-                                <h5>小林 愛</h5>
-                            </a>
-                            <p>CTO</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-duration="800">
-                    <div class="tekup-team-wrap">
-                        <div class="tekup-team-thumb">
-                            <img src="assets/images/team/team3.png" alt="">
-                            <div class="tekup-social-icon-box style-four position">
-                                <ul>
-                                    <li>
-                                        <a href="https://www.linkedin.com/">
-                                            <i class="ri-linkedin-fill"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://twitter.com/">
-                                            <i class="ri-twitter-fill"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.instagram.com/">
-                                            <i class="ri-instagram-fill"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="tekup-team-data">
-                            <a href="#">
-                                <h5>小澤 隆</h5>
-                            </a>
-                            <p>リードエンジニア</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-duration="1000">
-                    <div class="tekup-team-wrap">
-                        <div class="tekup-team-thumb">
-                            <img src="assets/images/team/team4.png" alt="">
-                            <div class="tekup-social-icon-box style-four position">
-                                <ul>
-                                    <li>
-                                        <a href="https://www.linkedin.com/">
-                                            <i class="ri-linkedin-fill"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://twitter.com/">
-                                            <i class="ri-twitter-fill"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.instagram.com/">
-                                            <i class="ri-instagram-fill"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="tekup-team-data">
-                            <a href="#">
-                                <h5>青山 美波</h5>
-                            </a>
-                            <p>COO 兼 プロダクト責任者</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="hero__meta-row reveal" data-stagger="3">
+              <span class="hero__meta-label">Headquarters</span>
+              <span class="hero__meta-val">東京・東池袋<br>サンシャイン60</span>
             </div>
+            <div class="hero__meta-row reveal" data-stagger="4">
+              <span class="hero__meta-label">Practices</span>
+              <span class="hero__meta-val">Salesforce / 生成AI<br>業務システム / SES / Web</span>
+            </div>
+            <a href="#contact" class="hero__cta reveal" data-stagger="5">Start a conversation</a>
+          </aside>
         </div>
-    </div>
-    -->
-    <!-- End section -->
+      </div>
+      <svg class="hero__ornament" viewBox="0 0 64 64" aria-hidden="true">
+        <g fill="currentColor">
+          <ellipse cx="32" cy="20" rx="8" ry="11"/>
+          <ellipse cx="20" cy="32" rx="11" ry="8"/>
+          <ellipse cx="44" cy="32" rx="11" ry="8"/>
+          <ellipse cx="32" cy="44" rx="8" ry="11"/>
+          <rect x="30" y="44" width="4" height="18" rx="1"/>
+        </g>
+      </svg>
+    </section>
 
-    <div class="section tekup-section-padding2">
-        <div class="container">
-            <div class="tekup-section-title">
-                <div class="row">
-                    <div class="col-xxl-5 col-lg-6">
-                        <h2>最新の技術ブログ・記事</h2>
-                    </div>
-                    <div class="col-xxl-7 col-lg-6 d-flex align-items-center justify-content-end">
-                        <div class="tekup-title-btn">
-                            <a class="tekup-default-btn" href="https://note.com/sanei_clover">noteをのぞいてみる <i class="ri-arrow-right-up-line"></i></a>
-                        </div>
-                    </div>
+    <!-- ─── ABOUT ─── -->
+    <section id="about" class="section">
+      <div class="edge">
+        <header class="section__head">
+          <span class="section-no reveal">S / 01</span>
+          <h2 class="section__title reveal" data-stagger="1">私たちについて<em>About</em></h2>
+          <p class="section__intro reveal" data-stagger="2">単なるシステム開発ではなく、お客様との信頼を築き、「頼られる」存在になること。それが私たちの使命です。</p>
+        </header>
+        <div class="about__grid">
+          <p class="about__lede reveal">
+            私たちが目指すのは、<br>テクノロジーでつなぐ <span class="mark">「人と、未来と、しあわせ」</span> です。
+          </p>
+          <div class="about__body reveal" data-stagger="1">
+            <p>テクノロジーで、人と未来をしあわせに。私たちは「三方よし」の精神で、技術とまごころを尽くし、価値ある変革を創造します。</p>
+            <p>単なるシステム開発ではなく、お客様との信頼を築き、「頼られる」存在になること。それが私たちの使命です。</p>
+            <div class="principles">
+              <article class="principle">
+                <span class="principle__no">P / 01</span>
+                <div>
+                  <h3 class="principle__title">信頼第一</h3>
+                  <p class="principle__desc">お客様の課題に真摯に向き合います。</p>
                 </div>
+              </article>
+              <article class="principle">
+                <span class="principle__no">P / 02</span>
+                <div>
+                  <h3 class="principle__title">共創の精神</h3>
+                  <p class="principle__desc">共に考え、共に未来を創ります。</p>
+                </div>
+              </article>
+              <article class="principle">
+                <span class="principle__no">P / 03</span>
+                <div>
+                  <h3 class="principle__title">丁寧な仕事</h3>
+                  <p class="principle__desc">一つひとつの業務に心を込めます。</p>
+                </div>
+              </article>
             </div>
-            <div class="row">
-                <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-duration="400">
-                    <div class="tekup-blog-wrap">
-                        <a href="https://note.com/sanei_clover/n/n86fa8a90fd43">
-                            <div class="tekup-blog-thumb">
-                                <img src="assets/images/blog/blog1.png" alt="">
-                            </div>
-                        </a>
-                        <div class="tekup-blog-content">
-                            <div class="tekup-blog-meta">
-                                <ul>
-                                    <li><a href="https://note.com/sanei_clover/n/n86fa8a90fd43">🍀 DX支援・システム開発・AI</a></li>
-                                    <li><a href="https://note.com/sanei_clover/n/n86fa8a90fd43">2025年6月20日 01:52</a></li>
-                                </ul>
-                            </div>
-                            <a href="https://note.com/sanei_clover/n/n86fa8a90fd43">
-                                <h3>はじめまして！株式会社サンエイクローバーです🍀</h3>
-                            </a>
-                            <a class="tekup-blog-btn" href="https://note.com/sanei_clover/n/n86fa8a90fd43">もっと読む <i class="ri-arrow-right-up-line"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-duration="600">
-                    <div class="tekup-blog-wrap">
-                        <a href="https://note.com/sanei_clover/n/nd91e6dcdbc95">
-                            <div class="tekup-blog-thumb">
-                                <img src="assets/images/blog/blog2.png" alt="">
-                            </div>
-                        </a>
-                        <div class="tekup-blog-content">
-                            <div class="tekup-blog-meta">
-                                <ul>
-                                    <li><a href="https://note.com/sanei_clover/n/nd91e6dcdbc95">Salesforce</a></li>
-                                    <li><a href="https://note.com/sanei_clover/n/nd91e6dcdbc95">2025年6月25日 22:31</a></li>
-                                </ul>
-                            </div>
-                            <a href="https://note.com/sanei_clover/n/nd91e6dcdbc95">
-                                <h3>自社DXの実践！Salesforceで営業〜経理業務を一気通貫で効率化した話</h3>
-                            </a>
-                            <a class="tekup-blog-btn" href="https://note.com/sanei_clover/n/nd91e6dcdbc95">もっと読む <i class="ri-arrow-right-up-line"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-duration="800">
-                    <div class="tekup-blog-wrap">
-                        <a href="single-blog.html">
-                            <div class="tekup-blog-thumb">
-                                <img src="assets/images/blog/blog3.png" alt="">
-                            </div>
-                        </a>
-                        <div class="tekup-blog-content">
-                            <div class="tekup-blog-meta">
-                                <ul>
-                                    <li><a href="https://note.com/sanei_clover/n/n1d69d71f792a">Salesforce・AI</a></li>
-                                    <li><a href="https://note.com/sanei_clover/n/n1d69d71f792a">2025年8月13日 01:34</a></li>
-                                </ul>
-                            </div>
-                            <a href="https://note.com/sanei_clover/n/n1d69d71f792a">
-                                <h3>Salesforceと生成AI活用で実現するDX推進｜情報の一元化と意思決定高速化</h3>
-                            </a>
-                            <a class="tekup-blog-btn" href="https://note.com/sanei_clover/n/n1d69d71f792a">もっと読む <i class="ri-arrow-right-up-line"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-    </div>
-    <!-- End section -->
+      </div>
+    </section>
 
-    <!-- Footer  -->
-    <div class="section z-index">
-        <div class="container">
-            <div class="tekup-cta-wrap" style="background-image: url(assets/images/v1/cta-bg.png)">
-                <div class="tekup-cta-content center">
-                    <h2>共に、未来を<br>創りませんか。 </h2>
-                    <p>私たちは、イノベーションの設計者であり、進歩の開拓者であり、そして、あなたの成功を支えるパートナーです。人とテクノロジーが調和したときにこそ、真の変革は生まれると信じています。</p>
-                    <div class="tekup-extra-mt" data-aos="fade-up" data-aos-duration="600">
-                        <a class="tekup-default-btn tekup-white-btn" href="contact.html">企画のご相談 <i class="ri-arrow-right-up-line"></i></a>
-                    </div>
-                </div>
-            </div>
+    <!-- ─── SERVICES ─── -->
+    <section id="services" class="section section--paper-2">
+      <div class="edge">
+        <header class="section__head">
+          <span class="section-no reveal">S / 02</span>
+          <h2 class="section__title reveal" data-stagger="1">事業内容<em>Services</em></h2>
+          <p class="section__intro reveal" data-stagger="2">業務システム開発から、Salesforce・生成AIを軸としたDX支援まで。現場で本当に機能する仕組みを設計・構築します。</p>
+        </header>
+        <div class="services">
+          <article class="service reveal">
+            <span class="service__no">01</span>
+            <h3 class="service__title">業務システム開発・運用支援<em>Business Systems</em></h3>
+            <p class="service__desc">お客様の業務に深く寄り添い、本当に使われる業務システムを開発します。要件定義から運用・保守まで、一貫した支援を提供します。</p>
+            <a href="#contact" class="service__cta">→ お問い合わせ</a>
+          </article>
+          <article class="service reveal" data-stagger="1">
+            <span class="service__no">02</span>
+            <h3 class="service__title">システムエンジニアリングサービス<em>SES</em></h3>
+            <p class="service__desc">お客様のプロジェクトに深く関わるパートナーとして、最適なエンジニアをアサイン。技術力だけでなく、信頼関係を築きながら課題解決を支援します。</p>
+            <a href="#contact" class="service__cta">→ お問い合わせ</a>
+          </article>
+          <article class="service reveal" data-stagger="2">
+            <span class="service__no">03</span>
+            <h3 class="service__title">AI・クラウドDX支援<em>Salesforce × AI</em></h3>
+            <p class="service__desc">Salesforceを中心としたクラウドソリューションに、AIや業務システムを組み合わせたDX支援。現場で本当に機能する仕組みを設計・構築します。</p>
+            <a href="#contact" class="service__cta">→ お問い合わせ</a>
+          </article>
+          <article class="service reveal" data-stagger="3">
+            <span class="service__no">04</span>
+            <h3 class="service__title">Webアプリケーション開発<em>Web Application</em></h3>
+            <p class="service__desc">使う人の目線に立ち、お客様一社一社の課題に合わせたWebアプリケーションをゼロから開発。ビジネスに最適な"業務エンジン"を共につくります。</p>
+            <a href="#contact" class="service__cta">→ お問い合わせ</a>
+          </article>
         </div>
-    </div>
-    <div id="footer"></div>
+      </div>
+    </section>
+
+    <!-- ─── PROCESS ─── -->
+    <section id="process" class="section">
+      <div class="edge">
+        <header class="section__head">
+          <span class="section-no reveal">S / 03</span>
+          <h2 class="section__title reveal" data-stagger="1">開発プロセス<em>Process</em></h2>
+          <p class="section__intro reveal" data-stagger="2">構想策定から運用・改善まで、一気通貫で並走します。導入後も「業務の土台」として共に育てていきます。</p>
+        </header>
+        <div class="process">
+          <article class="process__step reveal">
+            <span class="process__no">01</span>
+            <h3 class="process__title">構想策定・計画</h3>
+            <p class="process__desc">お客様の課題に深く向き合い、本当に必要なシステムを共に探求。未来を見据えた最適な計画を立案します。</p>
+          </article>
+          <article class="process__step reveal" data-stagger="1">
+            <span class="process__no">02</span>
+            <h3 class="process__title">設計・開発</h3>
+            <p class="process__desc">確かな技術力で「本当に使われる」システムを形にします。使いやすさやビジネスへの貢献を意識した開発を行います。</p>
+          </article>
+          <article class="process__step reveal" data-stagger="2">
+            <span class="process__no">03</span>
+            <h3 class="process__title">テスト・運用・改善</h3>
+            <p class="process__desc">導入後も一貫してサポート。変化に対応し、システムを"業務の土台"として共に育てていきます。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── WORKS ─── -->
+    <section id="works" class="section section--paper-2">
+      <div class="edge">
+        <header class="section__head">
+          <span class="section-no reveal">S / 04</span>
+          <h2 class="section__title reveal" data-stagger="1">実績紹介<em>Selected Works</em></h2>
+          <p class="section__intro reveal" data-stagger="2">UI/UX・AI・Salesforce・デジタルマーケティングなど、領域を横断したプロジェクトを共に手がけています。</p>
+        </header>
+        <div class="works">
+          <article class="work reveal">
+            <div class="work__thumb"><img src="/assets/images/p2/p_1.png" alt="Cognito Cloud"></div>
+            <div class="work__meta"><span>Case&nbsp;01</span><span>UI/UX · AI</span></div>
+            <h3 class="work__title">Cognito Cloud<em>UI/UX, AI Integration</em></h3>
+          </article>
+          <article class="work reveal" data-stagger="1">
+            <div class="work__thumb"><img src="/assets/images/p2/p_2.png" alt="Qchat"></div>
+            <div class="work__meta"><span>Case&nbsp;02</span><span>Salesforce × AI</span></div>
+            <h3 class="work__title">Qchat<em>Salesforce × Generative AI</em></h3>
+          </article>
+          <article class="work reveal" data-stagger="2">
+            <div class="work__thumb"><img src="/assets/images/p2/p_4.png" alt="デジタルマーケティング"></div>
+            <div class="work__meta"><span>Case&nbsp;03</span><span>Digital Marketing</span></div>
+            <h3 class="work__title">デジタルマーケティング<em>GA × Google Ads</em></h3>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── NOTES (BLOG) ─── -->
+    <section id="notes" class="section">
+      <div class="edge">
+        <header class="section__head">
+          <span class="section-no reveal">S / 05</span>
+          <h2 class="section__title reveal" data-stagger="1">最新の記事<em>Field Notes</em></h2>
+          <p class="section__intro reveal" data-stagger="2">noteで現場の知見を発信しています。Salesforce、生成AI、DX推進の実践記録。</p>
+        </header>
+        <div class="notes">
+          <a class="note reveal" href="https://note.com/sanei_clover/n/n86fa8a90fd43" rel="noopener" target="_blank">
+            <span class="note__date">2025.06.20</span>
+            <div>
+              <span class="note__cat">DX · System · AI</span>
+              <h3 class="note__title">はじめまして！株式会社サンエイクローバーです🍀</h3>
+            </div>
+            <span class="note__arrow">↗</span>
+          </a>
+          <a class="note reveal" data-stagger="1" href="https://note.com/sanei_clover/n/nd91e6dcdbc95" rel="noopener" target="_blank">
+            <span class="note__date">2025.06.25</span>
+            <div>
+              <span class="note__cat">Salesforce</span>
+              <h3 class="note__title">自社DXの実践！Salesforceで営業〜経理業務を一気通貫で効率化した話</h3>
+            </div>
+            <span class="note__arrow">↗</span>
+          </a>
+          <a class="note reveal" data-stagger="2" href="https://note.com/sanei_clover/n/n1d69d71f792a" rel="noopener" target="_blank">
+            <span class="note__date">2025.08.13</span>
+            <div>
+              <span class="note__cat">Salesforce · AI</span>
+              <h3 class="note__title">Salesforceと生成AI活用で実現するDX推進｜情報の一元化と意思決定高速化</h3>
+            </div>
+            <span class="note__arrow">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── COMPANY ─── -->
+    <section id="company" class="section section--ink">
+      <div class="edge">
+        <header class="section__head">
+          <span class="section-no reveal">S / 06</span>
+          <h2 class="section__title reveal" data-stagger="1">会社概要<em>Company</em></h2>
+          <p class="section__intro reveal" data-stagger="2">私たちは2024年、東京・東池袋に設立されました。少数精鋭で、信頼を一つひとつ積み重ねています。</p>
+        </header>
+        <div class="company">
+          <dl class="reveal">
+            <dt>会社名</dt><dd>株式会社サンエイクローバー<br><span style="font-family:var(--serif-en);font-style:italic;font-size:12px;color:var(--accent-soft)">SANEi CLOVER, INC.</span></dd>
+            <dt>代表取締役</dt><dd>中西 拓也</dd>
+            <dt>設立</dt><dd>2024年12月17日</dd>
+            <dt>資本金</dt><dd>990万円</dd>
+          </dl>
+          <dl class="reveal" data-stagger="1">
+            <dt>本社</dt><dd>〒170-6012<br>東京都豊島区東池袋3丁目1-1<br>サンシャイン60　12階</dd>
+            <dt>連絡先</dt><dd>TEL　03-6876-4989<br>tnakanishi@sanei-clover.com</dd>
+            <dt>主な事業</dt><dd>ITコンサルティング／システム開発／<br>デジタルマーケティング支援／AIテクノロジー支援</dd>
+            <dt>取引銀行</dt><dd>GMOあおぞらネット銀行</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── RECRUIT ─── -->
+    <section id="recruit" class="section">
+      <div class="edge">
+        <header class="section__head">
+          <span class="section-no reveal">S / 07</span>
+          <h2 class="section__title reveal" data-stagger="1">採用情報<em>Careers</em></h2>
+          <p class="section__intro reveal" data-stagger="2">「三方よし」の精神で、共に未来を創るメンバーを募集しています。少数精鋭、フラットなチーム。</p>
+        </header>
+        <div class="recruit">
+          <article class="recruit__item reveal">
+            <span class="recruit__role">01 · Sales</span>
+            <h3 class="recruit__title">セールス（レベル1）</h3>
+            <p class="recruit__desc">お客様の課題を深く理解し、最適な提案を共につくる。新規・既存を横断して、信頼を積み重ねる役割です。</p>
+          </article>
+          <article class="recruit__item reveal" data-stagger="1">
+            <span class="recruit__role">02 · Engineer</span>
+            <h3 class="recruit__title">システムエンジニア</h3>
+            <p class="recruit__desc">Salesforce・生成AI・Webを軸に、要件定義から設計・実装・運用までを担う。技術と現場の両方を楽しめる方を歓迎します。</p>
+          </article>
+          <article class="recruit__item reveal" data-stagger="2">
+            <span class="recruit__role">03 · Backoffice</span>
+            <h3 class="recruit__title">アカウントマネージャー</h3>
+            <p class="recruit__desc">プロジェクト運営・お客様対応・社内オペレーションを支える。少数精鋭の中核として、組織を整え、滑らかに動かす役割です。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── CONTACT ─── -->
+    <section id="contact" class="section section--ink">
+      <div class="edge">
+        <header class="section__head">
+          <span class="section-no reveal">S / 08</span>
+          <h2 class="section__title reveal" data-stagger="1">お問い合わせ<em>Get in touch</em></h2>
+          <p class="section__intro reveal" data-stagger="2">企画のご相談、お見積り、採用に関するご質問など。お気軽にご連絡ください。</p>
+        </header>
+        <div class="contact">
+          <div class="contact__info">
+            <p class="contact__lede reveal">最高のプロジェクトを、<br>共に。</p>
+            <div class="contact__row reveal" data-stagger="1">
+              <span class="contact__label">Address</span>
+              <span class="contact__val">〒170-6012<br>東京都豊島区東池袋 3-1-1<br>サンシャイン60　12階</span>
+            </div>
+            <div class="contact__row reveal" data-stagger="2">
+              <span class="contact__label">Phone</span>
+              <span class="contact__val"><a href="tel:0368764989">03-6876-4989</a></span>
+            </div>
+            <div class="contact__row reveal" data-stagger="3">
+              <span class="contact__label">Email</span>
+              <span class="contact__val"><a href="mailto:tnakanishi@sanei-clover.com">tnakanishi@sanei-clover.com</a></span>
+            </div>
+          </div>
+          <form id="contact-form" class="form reveal" data-stagger="1" novalidate>
+            <div class="form-row">
+              <div class="field"><label for="cf-name">氏名 / Name</label><input id="cf-name" type="text" name="name" placeholder="山田 太郎" required></div>
+              <div class="field"><label for="cf-phone">電話番号 / Phone</label><input id="cf-phone" type="tel" name="phone" placeholder="03-0000-0000"></div>
+            </div>
+            <div class="field"><label for="cf-email">メール / Email</label><input id="cf-email" type="email" name="email" placeholder="you@example.com" required></div>
+            <div class="field"><label for="cf-msg">ご相談内容 / Message</label><textarea id="cf-msg" name="message" placeholder="ご相談の概要をお書きください" required></textarea></div>
+            <button type="submit" class="submit"><span class="submit-label">Send</span><span class="submit-arrow" aria-hidden="true"></span></button>
+            <p id="contact-status" role="status" style="font-family:var(--mono);font-size:11px;letter-spacing:0.14em;color:var(--accent-soft);min-height:1em"></p>
+          </form>
+        </div>
+        <div class="map reveal" data-stagger="2">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3238.9092268350823!2d139.72061779999999!3d35.7284509!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d6e15093bcd%3A0xe7a78e696bb8bdb6!2sSunshine%20City%20Bunka%20Kaikan%20Bldg.!5e0!3m2!1sen!2sjp!4v1757918910687!5m2!1sen!2sjp" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="本社地図"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── CTA BAND ─── -->
+    <section class="cta-band">
+      <div class="edge">
+        <p class="cta-band__kicker reveal">Together, into the future.</p>
+        <h2 class="cta-band__title reveal" data-stagger="1">共に、未来を<br>創りませんか。</h2>
+        <a href="#contact" class="cta-band__btn reveal" data-stagger="2">企画のご相談</a>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer"></div>
+  <script>
+    fetch("/includes/footer.html").then(r => r.text()).then(html => {
+      document.getElementById("footer").outerHTML = html;
+      document.querySelectorAll("[data-year]").forEach(el => el.textContent = String(new Date().getFullYear()));
+    });
+  </script>
 </body>
-
 </html>
