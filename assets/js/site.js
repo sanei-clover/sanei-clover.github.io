@@ -69,7 +69,7 @@
       if (submit.querySelector(".submit-label")) submit.querySelector(".submit-label").textContent = "送信中…";
       try {
         await fetch(
-          "https://script.google.com/macros/s/AKfycbyBsnb7tvEMmIoUuHfc-qTOl1CzZfBqzuvoCP0T5xlUHepp5TAyPb-bW3b9u-L99X7fMA/exec",
+          "https://script.google.com/macros/s/AKfycbxKnefzwT4ELahlJIzRab5XpsjDJVj7ig-rlM2poiu-hX_6bs8vT_xx3dQJLlYj2lA-Gg/exec",
           { method: "POST", headers: { "Content-Type": "text/plain" }, body: JSON.stringify(data) }
         );
         if (status) status.textContent = "お問い合わせありがとうございます。担当よりご連絡いたします。";
