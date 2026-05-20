@@ -1,0 +1,8 @@
+# GitHub Pages (Jekyll) build settings
+# 公開サイトに含めないファイル
+exclude:
+  - README.md
+  - CLAUDE.md
+  - CLAUDE.local.md
+  - profiles/*/README.md
+  - profiles/**/README.md
