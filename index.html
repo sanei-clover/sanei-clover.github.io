@@ -10,14 +10,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+JP:wght@300;400;500&family=Shippori+Mincho+B1:wght@400;500;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/site.css?v=4">
+  <link rel="stylesheet" href="/assets/css/site.css?v=5">
+  <!-- Web-to-Lead -->
+  <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
 </head>
 <body>
   <div id="header"></div>
   <script>
     fetch("/includes/header.html", { cache: "no-store" }).then(r => r.text()).then(html => {
       document.getElementById("header").outerHTML = html;
-      const s = document.createElement("script"); s.src = "/assets/js/site.js?v=4"; document.body.appendChild(s);
+      const s = document.createElement("script"); s.src = "/assets/js/site.js?v=5"; document.body.appendChild(s);
     });
   </script>
 
@@ -105,7 +107,7 @@
           </article>
           <article class="service service--clover reveal" data-stagger="1">
             <span class="service__no">02</span>
-            <h3 class="service__title">DX支援<em>Salesforce × AI</em></h3>
+            <h3 class="service__title">AI・DX支援<em>Salesforce × AI</em></h3>
             <p class="service__desc">Salesforce中心のクラウドにAIや業務システムを組み合わせ、現場で機能する仕組みを設計・構築。</p>
           </article>
           <article class="service service--blue reveal" data-stagger="2">
@@ -176,7 +178,7 @@
           </dl>
           <dl class="reveal" data-stagger="1">
             <dt>本社</dt><dd>〒170-6012 東京都豊島区東池袋3-1-1<br>サンシャイン60 12階</dd>
-            <dt>連絡先</dt><dd>03-6876-4989<br>tnakanishi@sanei-clover.com</dd>
+            <dt>連絡先</dt><dd>03-6876-4989</dd>
             <dt>事業</dt><dd>ITコンサル／システム開発／AI支援</dd>
             <dt>取引銀行</dt><dd>GMOあおぞらネット銀行</dd>
           </dl>
@@ -221,31 +223,25 @@
           <p class="section__intro reveal" data-stagger="2">企画のご相談、お見積り、採用に関するご質問など、お気軽にどうぞ。</p>
         </header>
         <div class="contact">
-          <div class="contact__info">
-            <p class="contact__lede reveal">最高のプロジェクトを、<br>共に。</p>
-            <div class="contact__row reveal" data-stagger="1">
-              <span class="contact__label">Address</span>
-              <span class="contact__val">〒170-6012<br>東京都豊島区東池袋 3-1-1<br>サンシャイン60 12階</span>
-            </div>
-            <div class="contact__row reveal" data-stagger="2">
-              <span class="contact__label">Phone</span>
-              <span class="contact__val"><a href="tel:0368764989">03-6876-4989</a></span>
-            </div>
-            <div class="contact__row reveal" data-stagger="3">
-              <span class="contact__label">Email</span>
-              <span class="contact__val"><a href="mailto:tnakanishi@sanei-clover.com">tnakanishi@sanei-clover.com</a></span>
-            </div>
-          </div>
-          <form id="contact-form" class="form reveal" data-stagger="1" novalidate>
+          <form id="contact-form" class="form reveal" data-stagger="1"
+                action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DdL00000wN69l"
+                method="POST" target="sf-webtolead">
+            <span class="form__tag">Contact Form</span>
+            <!-- Salesforce Web-to-Lead 固定値・隠しフィールド -->
+            <input type="hidden" name="oid" value="00DdL00000wN69l">
+            <input type="hidden" name="lead_source" value="Web問合せ">
+            <input type="hidden" id="cf-first-name" name="first_name">
+            <input type="hidden" id="cf-last-name" name="last_name">
             <div class="form-row">
-              <div class="field"><label for="cf-name">氏名 / Name</label><input id="cf-name" type="text" name="name" placeholder="山田 太郎" required></div>
-              <div class="field"><label for="cf-phone">電話 / Phone</label><input id="cf-phone" type="tel" name="phone" placeholder="03-0000-0000"></div>
+              <div class="field"><label for="cf-name">氏名 / Name</label><input id="cf-name" type="text" placeholder="山田 太郎" required></div>
+              <div class="field"><label for="cf-phone">電話 / Phone</label><input id="cf-phone" type="tel" name="phone" placeholder="03-0000-0000" required></div>
             </div>
             <div class="field"><label for="cf-email">メール / Email</label><input id="cf-email" type="email" name="email" placeholder="you@example.com" required></div>
-            <div class="field"><label for="cf-msg">ご相談内容 / Message</label><textarea id="cf-msg" name="message" placeholder="ご相談の概要をお書きください" required></textarea></div>
-            <button type="submit" class="submit"><span class="submit-label">Send</span></button>
+            <div class="field"><label for="cf-msg">ご相談内容 / Message</label><textarea id="cf-msg" name="description" placeholder="ご相談の概要をお書きください" required></textarea></div>
+            <button type="submit" class="submit"><span class="submit-label">送信する / Send</span></button>
             <p id="contact-status" role="status" style="font-family:var(--mono);font-size:11px;letter-spacing:0.14em;color:var(--coral);min-height:1em"></p>
           </form>
+          <iframe name="sf-webtolead" title="送信先" aria-hidden="true" tabindex="-1" style="display:none"></iframe>
         </div>
         <div class="map reveal" data-stagger="2">
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3238.9092268350823!2d139.72061779999999!3d35.7284509!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d6e15093bcd%3A0xe7a78e696bb8bdb6!2sSunshine%20City%20Bunka%20Kaikan%20Bldg.!5e0!3m2!1sen!2sjp!4v1757918910687!5m2!1sen!2sjp" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="本社地図"></iframe>
