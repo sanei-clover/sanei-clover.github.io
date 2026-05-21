@@ -50,36 +50,49 @@
   // Year stamp
   $$("[data-year]").forEach((el) => (el.textContent = String(new Date().getFullYear())));
 
-  // Contact form → GAS endpoint
+  // Contact form → Salesforce Web-to-Lead（非表示iframe経由でページ遷移なし送信）
   const form = $("#contact-form");
   if (form) {
     const status = $("#contact-status");
     const submit = form.querySelector("button[type=submit]");
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const fd = new FormData(form);
-      const data = {
-        name: fd.get("name"),
-        phone: fd.get("phone"),
-        email: fd.get("email"),
-        message: fd.get("message"),
-      };
+    const label = submit?.querySelector(".submit-label");
+    const frame = document.querySelector('iframe[name="sf-webtolead"]');
+    let submitting = false;
+
+    form.addEventListener("submit", (e) => {
+      // 必須項目チェック（未入力なら送信せずブラウザ標準UIで通知）
+      if (!form.checkValidity()) {
+        e.preventDefault();
+        form.reportValidity();
+        return;
+      }
+      // 氏名（1欄）を姓・名に分割し、Web-to-Lead の first_name / last_name へ
+      const full = ($("#cf-name").value || "").trim();
+      const parts = full.split(/[\s　]+/).filter(Boolean);
+      if (parts.length >= 2) {
+        $("#cf-first-name").value = parts[0];
+        $("#cf-last-name").value = parts.slice(1).join(" ");
+      } else {
+        // スペースが無い場合は last_name（Salesforce必須項目）へまとめて格納
+        $("#cf-first-name").value = "";
+        $("#cf-last-name").value = parts[0] || "";
+      }
+      // ページ遷移はさせず、target の iframe へそのまま送信
+      submitting = true;
       submit.disabled = true;
-      const origLabel = submit.querySelector(".submit-label")?.textContent;
-      if (submit.querySelector(".submit-label")) submit.querySelector(".submit-label").textContent = "送信中…";
-      try {
-        await fetch(
-          "https://script.google.com/macros/s/AKfycbxKnefzwT4ELahlJIzRab5XpsjDJVj7ig-rlM2poiu-hX_6bs8vT_xx3dQJLlYj2lA-Gg/exec",
-          { method: "POST", headers: { "Content-Type": "text/plain" }, body: JSON.stringify(data) }
-        );
+      if (label) { label.dataset.orig = label.textContent; label.textContent = "送信中…"; }
+      if (status) { status.style.color = "var(--coral)"; status.textContent = ""; }
+    });
+
+    if (frame) {
+      frame.addEventListener("load", () => {
+        if (!submitting) return; // 初期ロード（about:blank）は無視
+        submitting = false;
         if (status) status.textContent = "お問い合わせありがとうございます。担当よりご連絡いたします。";
         form.reset();
-      } catch (err) {
-        if (status) status.textContent = "送信中にエラーが発生しました。お手数ですがメールでご連絡ください。";
-      } finally {
         submit.disabled = false;
-        if (submit.querySelector(".submit-label") && origLabel) submit.querySelector(".submit-label").textContent = origLabel;
-      }
-    });
+        if (label && label.dataset.orig) label.textContent = label.dataset.orig;
+      });
+    }
   }
 })();
