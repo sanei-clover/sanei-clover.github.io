@@ -32,3 +32,8 @@ description={ご相談内容 / MESSSAGE 欄の値}
 
 # ローカル動作確認
 - ポートは 8080 を使う事
+
+# Google Analytics 4
+- 測定ID: G-R362SW6WBR
+- 設置対象: 全ページ (index.html / 404.html / privacy.html / profiles/*)
+- 設置方法: Jekyll の `_includes/google-analytics.html` に gtag スニペットを定義し、各HTMLの `<head>` 内（できるだけ上部）で `{% include google-analytics.html %}` により読み込む
