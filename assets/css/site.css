@@ -512,7 +512,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   border-bottom: 1px solid var(--rule);
 }
 @media (min-width: 640px) { .services { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1100px) { .services { grid-template-columns: repeat(4, 1fr); } }
+@media (min-width: 1100px) { .services { grid-template-columns: repeat(3, 1fr); } }
 
 .service {
   background: var(--paper);
