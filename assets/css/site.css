@@ -608,6 +608,86 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 }
 .note:hover .note__arrow { color: var(--coral); }
 
+/* ─── FOUNDER ─── */
+.founder {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(28px, 5vw, 56px);
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .founder { grid-template-columns: minmax(220px, 300px) 1fr; }
+}
+
+.founder__portrait {
+  display: block;
+  background: var(--paper-2);
+  border-radius: 50%;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  max-width: 280px;
+  width: 100%;
+  margin: 0 auto;
+  border: 1px solid var(--rule);
+  transition: transform var(--t-fast);
+}
+.founder__portrait img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.founder__portrait:hover { transform: translateY(-2px); }
+
+.founder__body { min-width: 0; }
+.founder__role {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 14px;
+}
+.founder__name {
+  font-family: var(--serif-jp);
+  font-size: clamp(26px, 3.4vw, 34px);
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0 0 20px;
+  letter-spacing: 0.02em;
+}
+.founder__name em {
+  display: block;
+  font-family: var(--serif-en);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(14px, 1.4vw, 16px);
+  color: var(--ink-mute);
+  margin-top: 8px;
+  letter-spacing: 0.04em;
+}
+.founder__msg {
+  font-size: 15px;
+  line-height: 1.95;
+  color: var(--ink-soft);
+  margin: 0 0 28px;
+}
+.founder__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px;
+  border: 1px solid var(--ink);
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  transition: background var(--t-fast), color var(--t-fast);
+}
+.founder__cta:hover { background: var(--ink); color: var(--paper); }
+.founder__cta-arrow { transition: transform var(--t-fast); }
+.founder__cta:hover .founder__cta-arrow { transform: translateX(4px); }
+
 /* ─── COMPANY ─── */
 .company {
   display: grid;
